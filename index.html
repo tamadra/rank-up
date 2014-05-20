@@ -1,71 +1,713 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Rank-up by tamadra</title>
+<head>
+<meta name="viewport" content="width=670">
+<title>Rank Up!</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Rank-up</h1>
-        <p></p>
+<!-- Bootstrap css modified to include main.css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    padding: 0; margin: 0; height: 100%;
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+.article {
+    margin: 30px auto 0;
+    padding-bottom: 100px;
+}
+.footer {
+    width:100%;
+    text-align: center;
+    height:50px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    clear: both;
+}
+.width640 {
+    width: 640px;
+}
+#navigation-mobile a{
+    color: white;
+}
+#navigation-mobile a:hover{
+    color: #DE5E60;
+}
+#navigation-mobile ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+.container {
+    padding-left: 0; padding-right: 0;
+}
+.row {
+    margin-left: 0; margin-right: 0;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0; padding-right: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+.prompt-input {
+    background-color: #26292E;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(127, 130, 137, 0.5);
+    height: 50px;
+}
+.prompt-input.active {
+    border-color: white;
+}
+.prompt-input:hover {
+    border-color: white;
+}
+.prompt-input.error {
+    border-color: red;
+}
+.clear {
+    clear: both;
+}
+#find-button {
+    width: 100%;
 
-        <p class="view"><a href="https://github.com/tamadra/rank-up">View the Project on GitHub <small>tamadra/rank-up</small></a></p>
+    background: #DE5E60;
+    color: #FFF;
+
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 40px;
+    text-align: center;
+    vertical-align: middle;
+
+    margin-top: 15px;
+
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+
+    -webkit-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+    -moz-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+    -o-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+    transition: background 0.1s linear 0s, color 0.1s linear 0s;
+}
+.spec {
+    border-bottom:1px dashed #7F8289;
+}
+th {
+    font-weight: normal;
+    color: #7F8289;
+}
+td {
+    font-weight: 600;
+}
+h4 {
+    margin-bottom: 10px;
+}
+.alert-block {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.prompt-row input{
+    height: 45px;
+    padding: 8px 0;
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    background: #26292E;
+    color: #FFFFFF;
+    font-size: 16px;
+
+    resize: none;
+}
+.label {
+    display: inline-block;
+    font-size: 11px;
+    margin-left: 5px;
+}
+.alert-heading {
+    margin-bottom: 0;
+    line-height: normal;
+}
+#dismiss {
+    width: 100px; text-transform: none;
+    margin: 15px auto 0; display: block;
+    background-color: #7BAEB9; color:#fff;
+}
+#dismiss:hover {
+    background-color: white; color: #7BAEB9;
+}
+.option .accordion-inner {
+    padding: 0;
+}
+
+.option .accordion-inner table {
+    color: white;
+    font-weight: 300;
+}
+.option .accordion-toggle {
+    background-color: #5A9AA8;
+    cursor: default;
+    padding: 8px 15px;
+}
 
 
-        <ul>
-          <li><a href="https://github.com/tamadra/rank-up/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/tamadra/rank-up/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/tamadra/rank-up">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+.table>thead>tr>th {
+    border-bottom: 0;
+    padding-right:0;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    border-width: 0;
+}
+.table {
+    margin: 0;
+}
+.table th {
+    white-space: nowrap;
+}
+.table td {
+    font-size: smaller;
+}
+.nobreak {
+    white-space: nowrap;
+}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+.accordion {
+    margin-bottom: 10px;
+}
+.accordion-heading .accordion-toggle p {
+    margin-left: 10px;
+}
+#toggleArea .accordion-heading .accordion-toggle {
+    padding: 3px 15px;
+    /*background: rgba(31, 127, 92, 0.4);*/
+    background: #285046;
+    color:#FFFFFF;
+    font-weight: 300;
+    font-size: 16px;
+}
+#toggleArea .accordion-heading .accordion-toggle.partial {
+    /*background: rgba(31, 127, 92, 0.2);*/
+    background: #2B403E;
+}
+#toggleArea .accordion-heading .accordion-toggle span{
+    font-size: 16px;
+}
+.sub-dungeon.locked {
+    text-decoration: line-through;
+    color: #7F8289;
+}
+.unlocked {
+    text-decoration: inherit;
+    color: inherit;
+}
+.sub-dungeon {
+    cursor: pointer;
+}
+.tier {
+    text-align: center;
+    background-color: #26292E;
+    margin-bottom: 4px;
+}
+#toggleArea .dungeon.locked {
+    background: #3C3F45;
+}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+input[type=checkbox].checkbox1, input[type=checkbox].checkbox2 {
+    position: absolute;
+    left: -9999px;
+}
+input[type=checkbox].checkbox1 + label.c-label {
+    color: #7F8289;
+    height:20px; width: 20px;
+    display:inline-block;
+    line-height:20px;
+    font-size:20px;
+    vertical-align:middle;
+    cursor:pointer;
+    margin: 0 10px 0 0;
+}
+input[type=checkbox].checkbox2 + label.c-label {
+    color: #7F8289;
+    height:18px; width: 20px;
+    display:inline-block;
+    line-height:18px;
+    font-size:18px;
+    vertical-align:middle;
+    cursor:pointer;
+    margin: 0 10px 0 0;
+}
+input[type=checkbox].checkbox1.partial + label.c-label {
+    color: #1F7F5C;
+}
+input[type=checkbox].checkbox1.partial + label.c-label:after {
+    content: "\f147";
+}
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+input[type=checkbox].checkbox1:checked + label.c-label,
+input[type=checkbox].checkbox2:checked + label.c-label {
+    color: #1F7F5C;
+}
+input[type=checkbox].checkbox1:checked + label.c-label:after,
+input[type=checkbox].checkbox2:checked + label.c-label:after {
+    content: "\f046";
+}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+input[type=checkbox].checkbox1 + label.c-label:hover,
+input[type=checkbox].checkbox2 + label.c-label:hover {
+    color: white;
+}
+input[type=checkbox].checkbox1 + label.c-label:after,
+input[type=checkbox].checkbox2 + label.c-label:after {
+    content: "\f096";
+}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+/* for ie */
+input[type=checkbox].checkbox1.checked + label.c-label,
+input[type=checkbox].checkbox2.checked + label.c-label {
+    color: #1F7F5C;
+}
+input[type=checkbox].checkbox1.checked + label.c-label:after,
+input[type=checkbox].checkbox2.checked + label.c-label:after {
+    content: "\f046";
+}
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+.c-label{
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+.easiest_badge {
+    float: right;
+    color: #2F3238;
+    background-color: lightgoldenrodyellow;
+    padding: 0px 4px;
+    border-radius: 2px;
+    font-weight: 300;
+    margin-left: 3px;
+}
+.coin_badge {
+    float: right;
+    color: #2F3238;
+    background-color: gold;
+    padding: 0px 4px;
+    border-radius: 2px;
+    font-weight: 300;
+}
+.drop_badge {
+    float: right;
+    color: white;
+    background-color: green;
+    padding: 0px 4px;
+    border-radius: 2px;
+    font-weight: 300;
+}
+.stamina_badge {
+    float: right;
+    color: white;
+    background-color: #0064cd;
+    padding: 0px 4px;
+    border-radius: 2px;
+    font-weight: 300;
+}
+.multi_badge {
+    float: right;
+    color: white;
+    background-color: #DE5E60;
+    padding: 3px 4px;
+    border-radius: 1px;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/tamadra">tamadra</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h3.spec {
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+.table>tbody>tr>td {
+    background-color:#16191E;
+}
+.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color:#16191E;
+}
+.table-striped>tbody>tr:nth-child(even)>td {
+    background-color:#26292E;
+}
+
+/*for IE 8*/
+.table-striped>tbody>tr>td.odd {
+    background-color:#16191E;
+}
+.table-striped>tbody>tr>td.even {
+    background-color:#26292E;
+}
+.accordion-inner p.sub-dungeon.odd {
+    background-color: #26292E;
+}
+
+
+.table>tbody>tr>td {
+    padding: 10px;
+}
+.table>thead>tr>th {
+    padding-top:0;
+    padding-bottom: 3px;
+    line-height: 1.2;
+}
+/*
+     * toggles
+     */
+#avg_exp, #lowest_exp {
+    cursor: pointer;
+}
+#avg_exp.calc_active, #lowest_exp.calc_active {
+    color:white;
+    cursor: default;
+}
+.toggle {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 25px;
+    color: #404040;
+    cursor: pointer;
+}
+.toggle:last-child {
+    margin-bottom: 0;
+}
+.toggle input {
+    position: absolute;
+    left: -9999px;
+}
+.toggle i {
+    content: '';
+    position: relative;
+    top: 4px;
+    display: block;
+    width: 42px;
+    height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    background: #26292E;
+    margin-left: 8px;
+    margin-right: 8px;
+    /*border-color: rgba(127, 130, 137, 0.5);*/
+    border-color: white;
+    transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -ms-transition: border-color 0.3s;
+    -moz-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+}
+.toggle input + i > #knob {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    right: 4px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 1px;
+    opacity: 1;
+    background-color: white;
+    transition: right 0.2s;
+    -o-transition: right 0.2s;
+    -ms-transition: right 0.2s;
+    -moz-transition: right 0.2s;
+    -webkit-transition: right 0.2s;
+}
+.toggle input.checked + i > #knob {
+    content: '  ';
+    right: 24px;
+}
+.s_avg {
+    float: right;
+    margin-left:10px;
+}
+.s_range {
+    float: right;
+    margin-left:20px;
+}
+.s_stamina {
+    float: right;
+    margin-left:20px;
+    margin-right:15px;
+}
+ul {
+    padding-left: 30px;;
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<div class="header">
+    <div style="width: 100%; background-color: #26292E;">
+        <div>
+            <a id="mobile-nav" style="float: right; margin-right: 20px; display: block;" class="menu-nav" href="#menu-nav"></a>
+
+            <div style="height: 60px;">
+                <h2 style="margin-left: 30px; line-height: 58px; font-size: 28px; margin-bottom:0;" >
+                    <span style="color:#DE5E60;" class="font-fix">&#xe09b;</span> Rank Up!
+                <span style="color:#7F8289; font-size: 18px; margin-left:15px;">a helper tool for Puzzle & Dragons</span>
+                </h2>
+            </div>
+
+
+            <div id="navigation-mobile" style="display: none;">
+                <ul id="menu-nav-mobile">
+                    <li><a href="/s-rank" class="external"> S-Rank Calculator</a></li>
+                    <li><a href="/blog" class="external">Blog</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+</div>
+
+
+<div class="article">
+
+<div style="position: relative;">
+
+    <div style="display:none; border-radius: 1px; padding: 15px 30px 15px 20px; width: 640px; margin: 0 auto 30px;" id="intro" class="alert alert-block alert-info in">
+        <div class="fade in" style="position: absolute; height:170px; top:45px; left:0; right:0; width:100%; background-color: #48707B; z-index: -1;"></div>
+
+        <a onclick="return false;" class="close" id="intro_close" style="width: auto; top:-2px; right:-12px;" data-dismiss="alert">&times;</a>
+        <h4 style="margin-bottom: 5px;">
+            <span class="font-fix">&#xe05f;</span> What is this?
+        </h4>
+        <div style="margin-left: 25px;  font-size: 14px;">
+            Rank Up! is a calculator that suggests the best dungeon(s) to run, based on the stamina you have.
+            Plug in your Stamina and/or EXP to give it a whirl.
+            <br>
+            Features:
+            <ul style="margin-bottom: 0;">
+                <li style="font-size: 14px;"> Suggests only dungeons you have access to.</li>
+                <li style="font-size: 14px;"> Takes into account Daily Bonus events (such as 1/2 stamina).</li>
+            </ul>
+        </div>
+
+        <a data-dismiss="alert" id="dismiss" class="button button-small">Got it</a>
+    </div>
+</div>
+
+<div class="container width640">
+
+    <div class="row prompt-row">
+        <div class="col-xs-6" style="padding-right:0; border-right: 2px solid #2F3238; text-align: center;">
+            <div class="prompt-input active" onclick="$('#u_exp').focus();">
+                You need: <input style="width:80px; text-align: center" id="u_exp" placeholder="   ?" pattern="[0-9]*" autofocus> EXP
+            </div>
+        </div>
+
+        <div  class="col-xs-6" style="padding-left:0; border-left: 2px solid #2F3238; text-align: center;">
+            <div class="prompt-input" onclick="$('#u_stam').focus();">
+                You have: <input style="width:50px; text-align: center" id="u_stam" placeholder="   ?" pattern="[0-9]*"> Stamina
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-bottom-30" >
+        <div class="col-md-12">
+            <input type="button" id="find-button" class="submit" onclick="compute(); return false;" style="border-radius: 3px;" value="Find Dungeon">
+        </div>
+    </div>
+
+
+    <div class="row" style="display: none;" id="results_header" >
+        <div class="col-md-12">
+            <h3 class="spec"><span style="color:black;" class="font-fix">&#xe079;</span> Results
+                <span id="num_results" style="color:#7F8289; font-size: 16px; margin-left:15px;"></span></h3>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 10px;" id="success">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-success fade in" style="margin-bottom: 0;">
+                <span style="margin-right: 10px;" class="font-fix">&#xe082;</span><span id="custom_msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none;" id="ranked-container">
+        <div class="col-md-12">
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th style="">Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;" >avg&nbsp;&nbsp;&nbsp;<br>EXP&darr;</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="r_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 5px;" id="bummer">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-warning" style="margin-bottom: 0;">
+                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Bummer.</h4>
+                The most you can currently get is <b><span id="most_exp"></span></b> EXP
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 15px;" id="most_exp-container">
+        <div class="col-md-12">
+            <div id="most_exp_header" class="alert alert-block alert-info" style="margin-bottom: 0; padding: 7px 15px 5px;">
+                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Most EXP</h4>
+                <div style="display: inline-block"></div>
+            </div>
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="m_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-top: 5px; margin-bottom: 5px;" id="consolation_alert">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-info" style="margin-bottom: 0;">
+                <h4 id="but_wait" style="display: inline-block; margin-right: 6px;" class="alert-heading">But wait!</h4>
+                <div style="display: inline-block" id="consolation_msg"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="display: none;" id="consolation">
+        <div class="col-md-12">
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="c_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container width640 margin-bottom-30" style="margin-top: 40px; display: none;" id="settings">
+    <div class="col-md-12">
+        <h3 class="spec"><span style="color:black;" class="font-fix">&#xe0ba;</span> Settings</h3>
+
+        <h4 style="">Calculate dungeon EXP using:
+            <div style="float:right; color:#7F8289; font-size: smaller;">
+                <span id="avg_exp" class="calc_active">average EXP</span>
+                <label class="toggle"><input id="exp_checkbox" type="checkbox" name="checkbox-toggle">
+                    <i><span id="knob"></span></i></label>
+                <span id="lowest_exp">minimum EXP</span>
+            </div>
+        </h4>
+
+        <h4 style="">
+            Your Timezone:
+            <div id="timezone" onclick="alert('Changing Timezone not yet supported');" style="float:right; color:#7F8289; font-size: smaller;">
+            </div></h4>
+
+        <h4 style="">Available dungeons: <span style="float:right; color:#7F8289; font-size: smaller;">uncheck dungeons you can't or don't want to play</span></h4>
+
+
+        <!-- Start Toggle -->
+        <div class="accordion" id="toggleArea">
+        </div>
+        <!-- End Toggle -->
+    </div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="footer">
+    <a>bugs</a>/<a>suggestions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    /<a href="http://www.reddit.com/user/kh_2008/">reddit</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <span class="font-fix">&#xe02a;</span> @<a href="https://twitter.com/_tamadra">_tamadra</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    open source @<a>github</a>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/vendors.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</div>
+</body>
 </html>
