@@ -310,11 +310,7 @@ find_all_matches_sorted = function(stam, exp) {
         }
     }
     all_matches.sort(function(a,b) {
-        if (avgExpMode) {
             return (b[3]+b[4])/2 - (a[3]+a[4])/2;
-        } else {
-            return b[3] - a[3];
-        }
     });
     return all_matches;
 }

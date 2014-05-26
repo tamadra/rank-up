@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=670">
-<meta name="apple-mobile-web-app-title" content="Rank Up!" />
-<link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
 <title>Rank Up!</title>
+<meta name="viewport" content="width=660">
+
+<meta name="apple-mobile-web-app-title" content="Rank Up!" />
+<link rel="apple-touch-icon" href="/img/icon114.png" sizes="114x114">
 
 <!-- Bootstrap css modified to include main.css -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -13,11 +14,16 @@
     padding-right:0;
     border-right: 2px solid #2F3238;
     text-align: center;
+
+    width: 50%; padding-left:0; float: left; position: relative;
+
 }
 #stam_div {
     padding-left:0;
     border-left: 2px solid #2F3238;
     text-align: center;
+
+    width: 50%; float: left; position: relative;
 }
 #u_exp {
     width:80px;
@@ -30,44 +36,33 @@
 .width640 {
     width: 640px;
 }
-@media (max-width: 768px) {
+.prompt-row input{
+    padding: 8px 0;
 
-    #exp_div{
-        border-right-width: 0;
-        margin-bottom: 5px;
-    }
-    #stam_div {
-        border-left-width: 0;
-    }
-    #u_exp {
-        width:150px;
-    }
-    #u_stam {
-        width:150px;
-    }
-    .menu-nav {
-        background:url(img/menu-mobile2.png) 0 0 no-repeat;
-        width: 25px;
-        height: 25px;
-        margin: 18px 0 0 0;
-    }
-    .menu-nav.open {
-        background-position: 0 -25px;
-    }
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    background: #26292E;
+    color: #FFFFFF;
+    font-size: 16px;
+
+    resize: none;
 }
-@media (max-width: 640px) {
-    .menu-nav {
-        background:url(img/menu-mobile3.png) 0 0 no-repeat;
-        width: 32px;
-        height: 32px;
-        margin: 14px 0 0 0;
-    }
-    .menu-nav.open {
-        background-position: 0 -32px;
-    }
-    .width640 {
-        width: 620px;
-    }
+.prompt-input {
+    background-color: #26292E;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(127, 130, 137, 0.5);
+    height: 50px;
 }
 body {
     padding: 0; margin: 0; height: 100%;
@@ -77,7 +72,7 @@ body {
     position: relative;
 }
 .article {
-    margin: 30px auto 0;
+    margin: 0 auto;
     padding-bottom: 100px;
 }
 .footer {
@@ -115,13 +110,7 @@ body {
 .margin-bottom-30 {
     margin-bottom: 30px;
 }
-.prompt-input {
-    background-color: #26292E;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(127, 130, 137, 0.5);
-    height: 50px;
-}
+
 .prompt-input.active {
     border-color: white;
 }
@@ -182,28 +171,7 @@ h4 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.prompt-row input{
-    height: 45px;
-    padding: 8px 0;
 
-    margin-top: 2px;
-    margin-bottom: 2px;
-
-    border: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-
-    background: #26292E;
-    color: #FFFFFF;
-    font-size: 16px;
-
-    resize: none;
-}
 .label {
     display: inline-block;
     font-size: 11px;
@@ -534,6 +502,63 @@ h3.spec {
 ul {
     padding-left: 30px;;
 }
+.header h2 {
+    margin-left: 30px;
+    line-height: 58px;
+    font-size: 28px;
+    margin-bottom:0;
+}
+#mobile-nav.menu-nav {
+    float: right;
+    margin-right: 20px;
+    display: block;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .header h2 {
+        margin-left: 30px;
+        line-height: 78px;
+        font-size: 28px;
+        margin-bottom:0;
+    }
+    #exp_div{
+        border-right-width: 0;
+        margin-bottom: 5px;
+
+        width: 100%; padding-left:0; float: left; position: relative;
+    }
+    #stam_div {
+        border-left-width: 0;
+
+        width: 100%; padding-left:0; float: left; position: relative;
+    }
+    #u_exp {
+        width:150px;
+        font-size: 23px;
+    }
+    #u_stam {
+        width:150px;
+        font-size: 23px;
+    }
+    .menu-nav {
+        background:url(img/menu-mobile3.png) 0 0 no-repeat;
+        width: 32px;
+        height: 32px;
+        margin: 24px 0 0 0;
+    }
+    .menu-nav.open {
+        background-position: 0 -32px;
+    }
+    .width640 {
+        width: 620px;
+    }
+    .prompt-row input{
+        padding: 25px 0;
+    }
+    .prompt-input {
+        height: 84px;
+        font-size: 30px;
+    }
+}
 
 </style>
 
@@ -549,10 +574,10 @@ ul {
 <div class="header">
     <div style="width: 100%; background-color: #26292E;">
         <div>
-            <a id="mobile-nav" style="float: right; margin-right: 20px; display: block;" class="menu-nav" href="#menu-nav"></a>
+            <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
 
-            <div style="height: 60px;">
-                <h2 style="margin-left: 30px; line-height: 58px; font-size: 28px; margin-bottom:0;" >
+            <div>
+                <h2 >
                     <span style="color:#DE5E60;" class="font-fix">&#xe09b;</span> Rank Up!
                     <span style="color:#7F8289; font-size: 18px; margin-left:15px;">a helper tool for Puzzle & Dragons</span>
                 </h2>
@@ -573,207 +598,212 @@ ul {
 
 <div class="article">
 
-    <div style="position: relative;">
+<div style="position: relative;">
+    <div style="display:none; border-radius: 1px; padding: 15px 30px 15px 20px; margin: 50px auto;" id="intro" class="width640 alert alert-block alert-info in">
+        <div class="fade in" style="position: absolute; height:170px; top:45px; left:0; right:0; width:100%; background-color: #48707B; z-index: -1;"></div>
 
-        <div style="display:none; border-radius: 1px; padding: 15px 30px 15px 20px; margin: 0 auto 30px;" id="intro" class="width640 alert alert-block alert-info in">
-            <div class="fade in" style="position: absolute; height:170px; top:45px; left:0; right:0; width:100%; background-color: #48707B; z-index: -1;"></div>
-
-            <a onclick="return false;" class="close" id="intro_close" style="width: auto; top:-2px; right:-12px;" data-dismiss="alert">&times;</a>
-            <h4 style="margin-bottom: 5px;">
-                <span class="font-fix">&#xe05f;</span> What is this?
-            </h4>
-            <div style="margin-left: 25px;  font-size: 14px;">
-                Rank Up! is a calculator that suggests the best dungeon(s) to run, based on the stamina you have.
-                Plug in your Stamina and/or EXP to give it a whirl.
-                <br>
-                Features:
-                <ul style="margin-bottom: 0;">
-                    <li style="font-size: 14px;"> Suggests only dungeons you have access to.</li>
-                    <li style="font-size: 14px;"> Takes into account Daily Bonus events (such as 1/2 stamina).</li>
-                </ul>
-            </div>
-
-            <a data-dismiss="alert" id="dismiss" class="button button-small">Got it</a>
+        <a onclick="return false;" class="close" id="intro_close" style="width: auto; top:-2px; right:-12px;" data-dismiss="alert">&times;</a>
+        <h4 style="margin-bottom: 5px;">
+            <span class="font-fix">&#xe05f;</span> What is this?
+        </h4>
+        <div style="margin-left: 25px;  font-size: 14px;">
+            Rank Up! is a calculator that suggests the best dungeon(s) to run, based on the stamina you have.
+            Plug in your Stamina and/or EXP to give it a whirl.
+            <br>
+            Features:
+            <ul style="margin-bottom: 0;">
+                <li style="font-size: 14px;"> Suggests only dungeons you have access to.</li>
+                <li style="font-size: 14px;"> Takes into account Daily Bonus events (such as 1/2 stamina).</li>
+            </ul>
         </div>
+
+        <a data-dismiss="alert" id="dismiss" class="button button-small">Got it</a>
     </div>
+</div>
 
-    <div class="container width640">
+<div class="container width640" style="margin-top: 50px;">
 
-        <div class="row prompt-row">
-            <div class="col-xs-12 col-sm-6" id="exp_div">
-                <div class="prompt-input active" onclick="$('#u_exp').focus();">
-                    You need: <input id="u_exp" placeholder="   ?" pattern="[0-9]*" autofocus> EXP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-
-            <div  class="col-xs-12 col-sm-6" id="stam_div">
-                <div class="prompt-input" onclick="$('#u_stam').focus();">
-                    You have: <input id="u_stam" placeholder="   ?" pattern="[0-9]*"> Stamina
-                </div>
+    <div class="row prompt-row">
+        <!--<div class="col-xs-12 col-sm-6" id="exp_div">-->
+        <div id="exp_div">
+            <div class="prompt-input active" onclick="$('#u_exp').focus();">
+                You need: <input id="u_exp" placeholder="   ?" pattern="[0-9]*" autofocus> EXP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
 
-        <div class="row margin-bottom-30" >
-            <div class="col-md-12">
-                <input type="button" id="find-button" class="submit" onclick="compute(); return false;" style="border-radius: 3px;" value="Find Dungeon">
-            </div>
-        </div>
-
-
-        <div class="row" style="display: none;" id="results_header" >
-            <div class="col-md-12">
-                <h3 class="spec"><span style="color:black;" class="font-fix">&#xe079;</span> Results
-                    <span id="num_results" style="color:#7F8289; font-size: 16px; margin-left:15px;"></span></h3>
-            </div>
-        </div>
-
-        <div class="row" style="display: none; margin-bottom: 10px;" id="success">
-            <div class="col-md-12">
-                <div class="alert alert-block alert-success fade in" style="margin-bottom: 0;">
-                    <span style="margin-right: 10px;" class="font-fix">&#xe082;</span><span id="custom_msg"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="display: none;" id="ranked-container">
-            <div class="col-md-12">
-                <div class="accordion option">
-                    <div class="accordion-group">
-                        <div class="accordion-body in collapse" style="height: auto;">
-                            <div class="accordion-inner">
-                                <table class="table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th style="">Dungeon</th>
-                                        <th style="padding-left: 0; text-align: right;" >avg&nbsp;&nbsp;&nbsp;<br>EXP&darr;</th>
-                                        <th style="text-align: right;">min&nbsp;<br>EXP</th>
-                                        <th style="text-align: right; padding-right: 8px;">Stam</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="r_rows">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="display: none; margin-bottom: 5px;" id="bummer">
-            <div class="col-md-12">
-                <div class="alert alert-block alert-warning" style="margin-bottom: 0;">
-                    <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Bummer.</h4>
-                    The most you can currently get is <b><span id="most_exp"></span></b> EXP
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="display: none; margin-bottom: 15px;" id="most_exp-container">
-            <div class="col-md-12">
-                <div id="most_exp_header" class="alert alert-block alert-info" style="margin-bottom: 0; padding: 7px 15px 5px;">
-                    <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Most EXP</h4>
-                    <div style="display: inline-block"></div>
-                </div>
-                <div class="accordion option">
-                    <div class="accordion-group">
-                        <div class="accordion-body in collapse" style="height: auto;">
-                            <div class="accordion-inner">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Dungeon</th>
-                                        <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
-                                        <th style="text-align: right;">min&nbsp;<br>EXP</th>
-                                        <th style="text-align: right; padding-right: 8px;">Stam</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="m_rows">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style="display: none; margin-top: 5px; margin-bottom: 5px;" id="consolation_alert">
-            <div class="col-md-12">
-                <div class="alert alert-block alert-info" style="margin-bottom: 0;">
-                    <h4 id="but_wait" style="display: inline-block; margin-right: 6px;" class="alert-heading">But wait!</h4>
-                    <div style="display: inline-block" id="consolation_msg"></div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row" style="display: none;" id="consolation">
-            <div class="col-md-12">
-                <div class="accordion option">
-                    <div class="accordion-group">
-                        <div class="accordion-body in collapse" style="height: auto;">
-                            <div class="accordion-inner">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Dungeon</th>
-                                        <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
-                                        <th style="text-align: right;">min&nbsp;<br>EXP</th>
-                                        <th style="text-align: right; padding-right: 8px;">Stam</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="c_rows">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--<div  class="col-xs-12 col-sm-6" id="stam_div">-->
+        <div id="stam_div">
+            <div class="prompt-input" onclick="$('#u_stam').focus();">
+                You have: <input id="u_stam" placeholder="   ?" pattern="[0-9]*"> Stamina
             </div>
         </div>
     </div>
 
-    <div class="container width640 margin-bottom-30" style="margin-top: 40px; display: none;" id="settings">
+    <div class="row margin-bottom-30" >
         <div class="col-md-12">
-            <h3 class="spec"><span style="color:black;" class="font-fix">&#xe0ba;</span> Settings</h3>
-
-            <h4 style="">Calculate dungeon EXP using:
-                <div style="float:right; color:#7F8289; font-size: smaller;">
-                    <span id="avg_exp" class="calc_active">average EXP</span>
-                    <label class="toggle"><input id="exp_checkbox" type="checkbox" name="checkbox-toggle">
-                        <i><span id="knob"></span></i></label>
-                    <span id="lowest_exp">minimum EXP</span>
-                </div>
-            </h4>
-
-            <h4 style="">
-                Your Timezone:
-                <div id="timezone" onclick="alert('Changing Timezone not yet supported');" style="float:right; color:#7F8289; font-size: smaller;">
-                </div></h4>
-
-            <h4 style="">Available dungeons: <span style="float:right; color:#7F8289; font-size: smaller;">uncheck dungeons you can't or don't want to play</span></h4>
-
-
-            <!-- Start Toggle -->
-            <div class="accordion" id="toggleArea">
-            </div>
-            <!-- End Toggle -->
+            <input type="button" id="find-button" class="submit" onclick="compute(); return false;" style="border-radius: 3px;" value="Find Dungeon">
         </div>
     </div>
-    <div class="clear"></div>
+
+
+    <div class="row" style="display: none;" id="results_header" >
+        <div class="col-md-12">
+            <h3 class="spec"><span style="color:black;" class="font-fix">&#xe079;</span> Results
+                <span id="num_results" style="color:#7F8289; font-size: 16px; margin-left:15px;"></span></h3>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 10px;" id="success">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-success fade in" style="margin-bottom: 0;">
+                <span style="margin-right: 10px;" class="font-fix">&#xe082;</span><span id="custom_msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none;" id="ranked-container">
+        <div class="col-md-12">
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th style="">Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;" >avg&nbsp;&nbsp;&nbsp;<br>EXP&darr;</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="r_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 5px;" id="bummer">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-warning" style="margin-bottom: 0;">
+                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Bummer.</h4>
+                The most you can currently get is <b><span id="most_exp"></span></b> EXP
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-bottom: 15px;" id="most_exp-container">
+        <div class="col-md-12">
+            <div id="most_exp_header" class="alert alert-block alert-info" style="margin-bottom: 0; padding: 7px 15px 5px;">
+                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Most EXP</h4>
+                <div style="display: inline-block"></div>
+            </div>
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="m_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: none; margin-top: 5px; margin-bottom: 5px;" id="consolation_alert">
+        <div class="col-md-12">
+            <div class="alert alert-block alert-info" style="margin-bottom: 0;">
+                <h4 id="but_wait" style="display: inline-block; margin-right: 6px;" class="alert-heading">But wait!</h4>
+                <div style="display: inline-block" id="consolation_msg"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="display: none;" id="consolation">
+        <div class="col-md-12">
+            <div class="accordion option">
+                <div class="accordion-group">
+                    <div class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Dungeon</th>
+                                    <th style="padding-left: 0; text-align: right;">avg&nbsp;<br>EXP</th>
+                                    <th style="text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th style="text-align: right; padding-right: 8px;">Stam</th>
+                                </tr>
+                                </thead>
+                                <tbody id="c_rows">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container width640 margin-bottom-30" style="margin-top: 40px; display: none;" id="settings">
+    <div class="col-md-12">
+        <h3 class="spec"><span style="color:black;" class="font-fix">&#xe0ba;</span> Settings</h3>
+
+        <h4 style="">Calculate dungeon EXP using:
+            <div style="float:right; color:#7F8289; font-size: smaller;">
+                <span id="avg_exp" class="calc_active">average EXP</span>
+                <label class="toggle"><input id="exp_checkbox" type="checkbox" name="checkbox-toggle">
+                    <i><span id="knob"></span></i></label>
+                <span id="lowest_exp">minimum EXP</span>
+            </div>
+        </h4>
+
+        <h4 style="">
+            Your Timezone:
+            <div id="timezone" onclick="alert('Changing Timezone not yet supported');" style="float:right; color:#7F8289; font-size: smaller;">
+            </div></h4>
+
+        <h4 style="">Available dungeons: <span style="float:right; color:#7F8289; font-size: smaller;">uncheck dungeons you can't or don't want to play</span></h4>
+
+
+        <!-- Start Toggle -->
+        <div class="accordion" id="toggleArea">
+        </div>
+        <!-- End Toggle -->
+    </div>
+</div>
+<div class="clear"></div>
 </div>
 
 <div class="footer">
-    <a>bugs</a>/<a>suggestions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/tamadra/rank-up/issues">bugs</a>/<a href="https://github.com/tamadra/rank-up/issues">suggestions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     /<a href="http://www.reddit.com/user/kh_2008/">reddit</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <span class="font-fix">&#xe02a;</span> @<a href="https://twitter.com/_tamadra">_tamadra</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    open source @<a>github</a>
+    open source @<a href="https://github.com/tamadra/rank-up/tree/gh-pages">github</a>
 </div>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/vendors.js"></script>
 <script src="js/script.js"></script>
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
 </div>
 </body>
 </html>
