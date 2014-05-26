@@ -4,6 +4,10 @@ var showIntro = readPref("showIntro");
 if (showIntro === null || showIntro) {
     $('#intro').show();
 }
+var showSettingIntro = readPref("showSettingIntro");
+if (showSettingIntro !== null && !showSettingIntro) {
+    $('#intro2').hide();
+}
 
 // 0 - dungeon name
 // 1 - subdungeon
@@ -544,6 +548,10 @@ $(document).ready(function() {
     $('#intro_close, #dismiss').click(function(e) {
         savePref("showIntro", false, 180);
         $('#u_exp').focus();
+    });
+
+    $('#setting_intro_close').click(function(e) {
+        savePref("showSettingIntro", false, 180);
     });
 
     $('.c-label').click(function(event){
