@@ -371,7 +371,6 @@ compute = function() {
     $('#u_exp').blur();
     $('#u_stam').blur();
     $('#results_header').show();
-    $('#settings').show();
 
     u_stam = parseInt(u_stam);
     u_exp = parseInt(u_exp);
@@ -699,5 +698,8 @@ $(document).ready(function() {
             $('#cc'+lockedDungeons[l]).prop('checked', false).trigger("change");
         }
         filterDungeons();
+    } else {
+        // uncheck Starlight Sanctuary if they have not yet configured settings
+        $($('.checkbox1')[0]).trigger("click");
     }
 });
