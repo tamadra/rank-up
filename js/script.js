@@ -24,79 +24,79 @@ if (showSettingIntro !== null && !showSettingIntro) {
 d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Departure Tower","Room of Departure",3,43,55,16,2,,,,,],
     ["Departure Tower","The First Trial",5,87,111,20,3,,,,,],
-    ["Dungeon of Fire","Ruby Tunnel",3,43,58,17,4,"Tier 1","Red","1,8-16","3,15-23","stam"],
-    ["Dungeon of Fire","Ruby Defenders",3,103,118,37,5,"Tier 1","Red","1,8-16","3,15-23","stam"],
-    ["Dungeon of Fire","Tunnel Dragon",5,195,221,42,6,"Tier 1","Red","1,8-16","3,15-23","stam"],
-    ["Dungeon of Water","Sapphire Cave",3,60,77,23,7,"Tier 1","Blue","1,15-23","4,8-16","stam"],
-    ["Dungeon of Water","Sapphire Defenders",3,104,119,37,8,"Tier 1","Blue","1,15-23","4,8-16","stam"],
-    ["Dungeon of Water","The Cave Master",5,202,221,42,9,"Tier 1","Blue","1,15-23","4,8-16","stam"],
-    ["Dungeon of Wood","Jade Forest",3,59,78,23,10,"Tier 1","Green","2,8-16","4,15-23","stam"],
-    ["Dungeon of Wood","Jade Defenders",3,104,113,36,11,"Tier 1","Green","2,8-16","4,15-23","stam"],
-    ["Dungeon of Wood","Forest Dragon",5,205,234,44,12,"Tier 1","Green","2,8-16","4,15-23","stam"],
-    ["Dungeon of Light","Topaz Maze",3,92,99,32,13,"Tier 1","Light","2,15-23","5,8-16","stam"],
-    ["Dungeon of Light","Topaz Defenders",3,150,162,52,14,"Tier 1","Light","2,15-23","5,8-16","stam"],
-    ["Dungeon of Light","Mystic Labyrinth Bird",5,305,320,63,15,"Tier 1","Light","2,15-23","5,8-16","stam"],
-    ["Dungeon of Darkness","Amethyst Cave",3,89,101,32,16,"Tier 1","Dark","3,8-16","5,15-23","stam"],
-    ["Dungeon of Darkness","Deadly Violet Weapon",3,150,161,52,17,"Tier 1","Dark","3,8-16","5,15-23","stam"],
-    ["Dungeon of Darkness","Moon Death Dragon",5,317,338,66,18,"Tier 1","Dark","3,8-16","5,15-23","stam"],
+    ["Dungeon of Fire","Ruby Tunnel",3,43,58,17,4,"Tier 1","Red","1,8-15","3,15-22","stam"],
+    ["Dungeon of Fire","Ruby Defenders",3,103,118,37,5,"Tier 1","Red","1,8-15","3,15-22","stam"],
+    ["Dungeon of Fire","Tunnel Dragon",5,195,221,42,6,"Tier 1","Red","1,8-15","3,15-22","stam"],
+    ["Dungeon of Water","Sapphire Cave",3,60,77,23,7,"Tier 1","Blue","1,15-22","4,8-15","stam"],
+    ["Dungeon of Water","Sapphire Defenders",3,104,119,37,8,"Tier 1","Blue","1,15-22","4,8-15","stam"],
+    ["Dungeon of Water","The Cave Master",5,202,221,42,9,"Tier 1","Blue","1,15-22","4,8-15","stam"],
+    ["Dungeon of Wood","Jade Forest",3,59,78,23,10,"Tier 1","Green","2,8-15","4,15-22","stam"],
+    ["Dungeon of Wood","Jade Defenders",3,104,113,36,11,"Tier 1","Green","2,8-15","4,15-22","stam"],
+    ["Dungeon of Wood","Forest Dragon",5,205,234,44,12,"Tier 1","Green","2,8-15","4,15-22","stam"],
+    ["Dungeon of Light","Topaz Maze",3,92,99,32,13,"Tier 1","Light","2,15-22","5,8-15","stam"],
+    ["Dungeon of Light","Topaz Defenders",3,150,162,52,14,"Tier 1","Light","2,15-22","5,8-15","stam"],
+    ["Dungeon of Light","Mystic Labyrinth Bird",5,305,320,63,15,"Tier 1","Light","2,15-22","5,8-15","stam"],
+    ["Dungeon of Darkness","Amethyst Cave",3,89,101,32,16,"Tier 1","Dark","3,8-15","5,15-22","stam"],
+    ["Dungeon of Darkness","Deadly Violet Weapon",3,150,161,52,17,"Tier 1","Dark","3,8-15","5,15-22","stam"],
+    ["Dungeon of Darkness","Moon Death Dragon",5,317,338,66,18,"Tier 1","Dark","3,8-15","5,15-22","stam"],
     ["The Tower of Trials","Trial Commencement",3,202,255,76,19,"Tier 1","Tower","6","0","stam"],
     ["The Tower of Trials","Dual Weapons",3,274,316,98,20,"Tier 1","Tower","6","0","stam"],
     ["The Tower of Trials","None Shall Pass",5,382,444,83,21,"Tier 1","Tower","6","0","stam"],
-    ["Volcano of Vulcan","Crater Entrance",5,350,400,75,22,"Tier 2","Red","1,8-16","3,15-23","coin"],
-    ["Volcano of Vulcan","Keeper of Flame",5,650,766,142,23,"Tier 2","Red","1,8-16","3,15-23","coin"],
-    ["Volcano of Vulcan","Crimson Dragon",5,454,548,101,24,"Tier 2","Red","1,8-16","3,15-23","coin"],
-    ["Volcano of Vulcan","Flame Snake Woman",5,690,765,146,25,"Tier 2","Red","1,8-16","3,15-23","coin"],
-    ["Volcano of Vulcan","Arise Vulcan Dragon",5,690,812,151,26,"Tier 2","Red","1,8-16","3,15-23","coin"],
-    ["Neptune Glacier","Freezing Winds",5,350,390,74,27,"Tier 2","Blue","1,15-23","4,8-16","coin"],
-    ["Neptune Glacier","Keeper of Ice",5,700,730,143,28,"Tier 2","Blue","1,15-23","4,8-16","coin"],
-    ["Neptune Glacier","Dark Water Shadow",5,430,470,90,29,"Tier 2","Blue","1,15-23","4,8-16","coin"],
-    ["Neptune Glacier","The Mermaid's Feast",5,750,860,161,30,"Tier 2","Blue","1,15-23","4,8-16","coin"],
-    ["Neptune Glacier","Ice Aurora Dragon",5,740,780,152,31,"Tier 2","Blue","1,15-23","4,8-16","coin"],
-    ["Demeter Forest","Rustling of Trees",5,346,366,72,32,"Tier 2","Green","2,8-16","4,15-23","coin"],
-    ["Demeter Forest","Keeper of Trees",5,680,720,140,33,"Tier 2","Green","2,8-16","4,15-23","coin"],
-    ["Demeter Forest","Hungry Green Dragon",5,630,650,128,34,"Tier 2","Green","2,8-16","4,15-23","coin"],
-    ["Demeter Forest","The Fairy's Invitation",5,750,850,160,35,"Tier 2","Green","2,8-16","4,15-23","coin"],
-    ["Demeter Forest","Ground Dragon Arisen",5,650,878,153,36,"Tier 2","Green","2,8-16","4,15-23","coin"],
-    ["Tomb of the Saint","Under the Cemetery",5,398,418,82,37,"Tier 2","Light","2,15-23","5,8-16","coin"],
-    ["Tomb of the Saint","Gravekeeper Gizmo",5,601,621,123,38,"Tier 2","Light","2,15-23","5,8-16","coin"],
-    ["Tomb of the Saint","Wise White Dragon",5,650,657,131,39,"Tier 2","Light","2,15-23","5,8-16","coin"],
-    ["Tomb of the Saint","Heaven's Servant",5,829,839,167,40,"Tier 2","Light","2,15-23","5,8-16","coin"],
-    ["Tomb of the Saint","The Saint's Dragon",5,990,1010,200,41,"Tier 2","Light","2,15-23","5,8-16","coin"],
-    ["Pluto Valley","Cave of the Valley",5,425,488,92,42,"Tier 2","Dark","3,8-16","5,15-23","coin"],
-    ["Pluto Valley","Wandering Murderer",5,715,781,150,43,"Tier 2","Dark","3,8-16","5,15-23","coin"],
-    ["Pluto Valley","Creeping Darkness",5,609,769,138,44,"Tier 2","Dark","3,8-16","5,15-23","coin"],
-    ["Pluto Valley","Succubus's Whisper",5,762,965,173,45,"Tier 2","Dark","3,8-16","5,15-23","coin"],
-    ["Pluto Valley","Dragon of the Abyss",5,900,940,184,46,"Tier 2","Dark","3,8-16","5,15-23","coin"],
+    ["Volcano of Vulcan","Crater Entrance",5,350,400,75,22,"Tier 2","Red","1,8-15","3,15-22","coin"],
+    ["Volcano of Vulcan","Keeper of Flame",5,650,766,142,23,"Tier 2","Red","1,8-15","3,15-22","coin"],
+    ["Volcano of Vulcan","Crimson Dragon",5,454,548,101,24,"Tier 2","Red","1,8-15","3,15-22","coin"],
+    ["Volcano of Vulcan","Flame Snake Woman",5,690,765,146,25,"Tier 2","Red","1,8-15","3,15-22","coin"],
+    ["Volcano of Vulcan","Arise Vulcan Dragon",5,690,812,151,26,"Tier 2","Red","1,8-15","3,15-22","coin"],
+    ["Neptune Glacier","Freezing Winds",5,350,390,74,27,"Tier 2","Blue","1,15-22","4,8-15","coin"],
+    ["Neptune Glacier","Keeper of Ice",5,700,730,143,28,"Tier 2","Blue","1,15-22","4,8-15","coin"],
+    ["Neptune Glacier","Dark Water Shadow",5,430,470,90,29,"Tier 2","Blue","1,15-22","4,8-15","coin"],
+    ["Neptune Glacier","The Mermaid's Feast",5,750,860,161,30,"Tier 2","Blue","1,15-22","4,8-15","coin"],
+    ["Neptune Glacier","Ice Aurora Dragon",5,740,780,152,31,"Tier 2","Blue","1,15-22","4,8-15","coin"],
+    ["Demeter Forest","Rustling of Trees",5,346,366,72,32,"Tier 2","Green","2,8-15","4,15-22","coin"],
+    ["Demeter Forest","Keeper of Trees",5,680,720,140,33,"Tier 2","Green","2,8-15","4,15-22","coin"],
+    ["Demeter Forest","Hungry Green Dragon",5,630,650,128,34,"Tier 2","Green","2,8-15","4,15-22","coin"],
+    ["Demeter Forest","The Fairy's Invitation",5,750,850,160,35,"Tier 2","Green","2,8-15","4,15-22","coin"],
+    ["Demeter Forest","Ground Dragon Arisen",5,650,878,153,36,"Tier 2","Green","2,8-15","4,15-22","coin"],
+    ["Tomb of the Saint","Under the Cemetery",5,398,418,82,37,"Tier 2","Light","2,15-22","5,8-15","coin"],
+    ["Tomb of the Saint","Gravekeeper Gizmo",5,601,621,123,38,"Tier 2","Light","2,15-22","5,8-15","coin"],
+    ["Tomb of the Saint","Wise White Dragon",5,650,657,131,39,"Tier 2","Light","2,15-22","5,8-15","coin"],
+    ["Tomb of the Saint","Heaven's Servant",5,829,839,167,40,"Tier 2","Light","2,15-22","5,8-15","coin"],
+    ["Tomb of the Saint","The Saint's Dragon",5,990,1010,200,41,"Tier 2","Light","2,15-22","5,8-15","coin"],
+    ["Pluto Valley","Cave of the Valley",5,425,488,92,42,"Tier 2","Dark","3,8-15","5,15-22","coin"],
+    ["Pluto Valley","Wandering Murderer",5,715,781,150,43,"Tier 2","Dark","3,8-15","5,15-22","coin"],
+    ["Pluto Valley","Creeping Darkness",5,609,769,138,44,"Tier 2","Dark","3,8-15","5,15-22","coin"],
+    ["Pluto Valley","Succubus's Whisper",5,762,965,173,45,"Tier 2","Dark","3,8-15","5,15-22","coin"],
+    ["Pluto Valley","Dragon of the Abyss",5,900,940,184,46,"Tier 2","Dark","3,8-15","5,15-22","coin"],
     ["Tower of Giants","Path to the Tower",5,504,719,123,47,"Tier 2","Tower","6","0","stam"],
     ["Tower of Giants","Gate of the Giant",5,894,1113,201,48,"Tier 2","Tower","6","0","stam"],
     ["Tower of Giants","Dragons of the Tower",5,1383,1701,309,49,"Tier 2","Tower","6","0","stam"],
     ["Tower of Giants","Giant Guards",5,940,1222,217,50,"Tier 2","Tower","6","0","stam"],
     ["Tower of Giants","Wrath of the Giant",7,1380,1572,211,51,"Tier 2","Tower","6","0","stam"],
-    ["Fire Forest Nerva","Burning Tree Path",7,1396,1736,224,52,"Tier 3","Red","1,8-16","3,15-23","drop"],
-    ["Fire Forest Nerva","Fire-Worshipping Snake",7,1299,1646,211,53,"Tier 3","Red","1,8-16","3,15-23","drop"],
-    ["Fire Forest Nerva","Dragons of Flame",7,1437,1860,236,54,"Tier 3","Red","1,8-16","3,15-23","drop"],
-    ["Fire Forest Nerva","Fire-Laden Warrior",7,1437,1860,236,55,"Tier 3","Red","1,8-16","3,15-23","drop"],
-    ["Fire Forest Nerva","Explosive Fire Dragon",7,1430,1801,231,56,"Tier 3","Red","1,8-16","3,15-23","drop"],
-    ["Sea Cave Mercury","Path to the Seabed",7,1438,1507,211,66,"Tier 3","Blue","1,15-23","4,8-16","drop"],
-    ["Sea Cave Mercury","Voice of the Siren",7,1254,1727,213,67,"Tier 3","Blue","1,15-23","4,8-16","drop"],
-    ["Sea Cave Mercury","Water Dragon Gate",7,1513,1708,231,68,"Tier 3","Blue","1,15-23","4,8-16","drop"],
-    ["Sea Cave Mercury","The Fanged Warriors",7,1571,1930,251,69,"Tier 3","Blue","1,15-23","4,8-16","drop"],
-    ["Sea Cave Mercury","Sea Dragon of Ice",7,1577,1683,233,70,"Tier 3","Blue","1,15-23","4,8-16","drop"],
-    ["Sacred Mt. Bakkes","Path to the Peak",7,1380,1737,223,79,"Tier 3","Green","2,8-16","4,15-23","drop"],
-    ["Sacred Mt. Bakkes","Allure of Flowers",7,1348,1659,215,80,"Tier 3","Green","2,8-16","4,15-23","drop"],
-    ["Sacred Mt. Bakkes","Young Earth Dragon",7,1480,1612,221,81,"Tier 3","Green","2,8-16","4,15-23","drop"],
-    ["Sacred Mt. Bakkes","Dragon Knights",7,1611,1761,241,82,"Tier 3","Green","2,8-16","4,15-23","drop"],
-    ["Sacred Mt. Bakkes","Apex Flower Dragon",7,1463,1870,239,83,"Tier 3","Green","2,8-16","4,15-23","drop"],
-    ["Twin Temple Apollo","Sunlight Temple",8,1557,1980,222,84,"Tier 3","Light","2,15-23","5,8-16","drop"],
-    ["Twin Temple Apollo","The Cruel Angel",8,1570,1742,207,85,"Tier 3","Light","2,15-23","5,8-16","drop"],
-    ["Twin Temple Apollo","White Snake",8,1565,1765,209,86,"Tier 3","Light","2,15-23","5,8-16","drop"],
-    ["Twin Temple Apollo","Warrior of the Sky",8,1235,2195,215,87,"Tier 3","Light","2,15-23","5,8-16","drop"],
-    ["Twin Temple Apollo","Sunlight Dragon",8,1716,2266,249,88,"Tier 3","Light","2,15-23","5,8-16","drop"],
-    ["Twin Temple Diana","Moonlight Temple",8,1416,1964,212,89,"Tier 3","Dark","3,8-16","5,15-23","drop"],
-    ["Twin Temple Diana","The Coaxing Snake",8,1533,1940,218,90,"Tier 3","Dark","3,8-16","5,15-23","drop"],
-    ["Twin Temple Diana","Twin Cursed Dragons",8,1664,2013,230,91,"Tier 3","Dark","3,8-16","5,15-23","drop"],
-    ["Twin Temple Diana","Dark Dragon Knights",8,1592,2240,240,92,"Tier 3","Dark","3,8-16","5,15-23","drop"],
-    ["Twin Temple Diana","Moonlight Dragon",8,1716,1932,228,93,"Tier 3","Dark","3,8-16","5,15-23","drop"],
+    ["Fire Forest Nerva","Burning Tree Path",7,1396,1736,224,52,"Tier 3","Red","1,8-15","3,15-22","drop"],
+    ["Fire Forest Nerva","Fire-Worshipping Snake",7,1299,1646,211,53,"Tier 3","Red","1,8-15","3,15-22","drop"],
+    ["Fire Forest Nerva","Dragons of Flame",7,1437,1860,236,54,"Tier 3","Red","1,8-15","3,15-22","drop"],
+    ["Fire Forest Nerva","Fire-Laden Warrior",7,1437,1860,236,55,"Tier 3","Red","1,8-15","3,15-22","drop"],
+    ["Fire Forest Nerva","Explosive Fire Dragon",7,1430,1801,231,56,"Tier 3","Red","1,8-15","3,15-22","drop"],
+    ["Sea Cave Mercury","Path to the Seabed",7,1438,1507,211,66,"Tier 3","Blue","1,15-22","4,8-15","drop"],
+    ["Sea Cave Mercury","Voice of the Siren",7,1254,1727,213,67,"Tier 3","Blue","1,15-22","4,8-15","drop"],
+    ["Sea Cave Mercury","Water Dragon Gate",7,1513,1708,231,68,"Tier 3","Blue","1,15-22","4,8-15","drop"],
+    ["Sea Cave Mercury","The Fanged Warriors",7,1571,1930,251,69,"Tier 3","Blue","1,15-22","4,8-15","drop"],
+    ["Sea Cave Mercury","Sea Dragon of Ice",7,1577,1683,233,70,"Tier 3","Blue","1,15-22","4,8-15","drop"],
+    ["Sacred Mt. Bakkes","Path to the Peak",7,1380,1737,223,79,"Tier 3","Green","2,8-15","4,15-22","drop"],
+    ["Sacred Mt. Bakkes","Allure of Flowers",7,1348,1659,215,80,"Tier 3","Green","2,8-15","4,15-22","drop"],
+    ["Sacred Mt. Bakkes","Young Earth Dragon",7,1480,1612,221,81,"Tier 3","Green","2,8-15","4,15-22","drop"],
+    ["Sacred Mt. Bakkes","Dragon Knights",7,1611,1761,241,82,"Tier 3","Green","2,8-15","4,15-22","drop"],
+    ["Sacred Mt. Bakkes","Apex Flower Dragon",7,1463,1870,239,83,"Tier 3","Green","2,8-15","4,15-22","drop"],
+    ["Twin Temple Apollo","Sunlight Temple",8,1557,1980,222,84,"Tier 3","Light","2,15-22","5,8-15","drop"],
+    ["Twin Temple Apollo","The Cruel Angel",8,1570,1742,207,85,"Tier 3","Light","2,15-22","5,8-15","drop"],
+    ["Twin Temple Apollo","White Snake",8,1565,1765,209,86,"Tier 3","Light","2,15-22","5,8-15","drop"],
+    ["Twin Temple Apollo","Warrior of the Sky",8,1235,2195,215,87,"Tier 3","Light","2,15-22","5,8-15","drop"],
+    ["Twin Temple Apollo","Sunlight Dragon",8,1716,2266,249,88,"Tier 3","Light","2,15-22","5,8-15","drop"],
+    ["Twin Temple Diana","Moonlight Temple",8,1416,1964,212,89,"Tier 3","Dark","3,8-15","5,15-22","drop"],
+    ["Twin Temple Diana","The Coaxing Snake",8,1533,1940,218,90,"Tier 3","Dark","3,8-15","5,15-22","drop"],
+    ["Twin Temple Diana","Twin Cursed Dragons",8,1664,2013,230,91,"Tier 3","Dark","3,8-15","5,15-22","drop"],
+    ["Twin Temple Diana","Dark Dragon Knights",8,1592,2240,240,92,"Tier 3","Dark","3,8-15","5,15-22","drop"],
+    ["Twin Temple Diana","Moonlight Dragon",8,1716,1932,228,93,"Tier 3","Dark","3,8-15","5,15-22","drop"],
     ["Castle of Satan","Castle Gate",9,1752,2394,231,115,"Tier 3","Tower","6","0","drop"],
     ["Castle of Satan","The Witches' Ball",9,1700,2424,230,116,"Tier 3","Tower","6","0","drop"],
     ["Castle of Satan","Cage of the Beast",9,2170,2564,263,117,"Tier 3","Tower","6","0","drop"],
@@ -122,31 +122,31 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Tomb of the Saint-Deep","Gate to Hell",10,3400,3553,348,139,"Tier 4","Tower","6","0","drop"],
     ["Tomb of the Saint-Deep","Eternal Peace",10,3300,3433,337,140,"Tier 4","Tower","6","0","drop"],
     ["Tomb of the Saint-Deep","King of the Underworld",12,4449,5300,407,141,"Tier 4","Tower","6","0","drop"],
-    ["Hyperion Lava Flow","Blazing River",10,4179,4737,446,142,"Tier 5","Red","1,8-16","3,15-23","drop"],
-    ["Hyperion Lava Flow","Ruby Altar",10,3476,3678,358,143,"Tier 5","Red","1,8-16","3,15-23","drop"],
-    ["Hyperion Lava Flow","Lava Tube",10,4799,5753,528,144,"Tier 5","Red","1,8-16","3,15-23","drop"],
-    ["Hyperion Lava Flow","Serpent Loved by Flame",10,3915,4401,416,145,"Tier 5","Red","1,8-16","3,15-23","drop"],
-    ["Hyperion Lava Flow","Blazing Dragon",12,5749,6772,522,146,"Tier 5","Red","1,8-16","3,15-23","drop"],
-    ["Oceanus Falls","Eternal Waterfall",10,4216,4600,441,147,"Tier 5","Blue","1,15-23","4,8-16","drop"],
-    ["Oceanus Falls","Sapphire Altar",10,3102,3971,354,148,"Tier 5","Blue","1,15-23","4,8-16","drop"],
-    ["Oceanus Falls","Whirlpool in the Waterfall Basin",10,4802,5676,524,149,"Tier 5","Blue","1,15-23","4,8-16","drop"],
-    ["Oceanus Falls","Invitation to the Abyss",10,3894,4346,412,150,"Tier 5","Blue","1,15-23","4,8-16","drop"],
-    ["Oceanus Falls","Great Dragon of the Abyss",12,5640,6694,514,151,"Tier 5","Blue","1,15-23","4,8-16","drop"],
-    ["Kronos Forest","Forest of Darkness",10,4311,4888,460,152,"Tier 5","Green","2,8-16","4,15-23","drop"],
-    ["Kronos Forest","Jasper Altar",10,3336,3790,357,153,"Tier 5","Green","2,8-16","4,15-23","drop"],
-    ["Kronos Forest","Gate to the Mystic Land",10,4898,5554,523,154,"Tier 5","Green","2,8-16","4,15-23","drop"],
-    ["Kronos Forest","Fairies' Paradise",10,3836,4307,408,155,"Tier 5","Green","2,8-16","4,15-23","drop"],
-    ["Kronos Forest","Ancient Guardian",12,5885,6728,526,156,"Tier 5","Green","2,8-16","4,15-23","drop"],
-    ["Rhea-Themis Temple","Divinegon's Den",11,4387,5022,428,157,"Tier 5","Light","2,15-23","5,8-16","drop"],
-    ["Rhea-Themis Temple","Golden Altar",11,3492,3977,340,158,"Tier 5","Light","2,15-23","5,8-16","drop"],
-    ["Rhea-Themis Temple","Room of Prayers",11,3273,5700,408,159,"Tier 5","Light","2,15-23","5,8-16","drop"],
-    ["Rhea-Themis Temple","The Price of a Smile",11,4155,4504,394,160,"Tier 5","Light","2,15-23","5,8-16","drop"],
-    ["Rhea-Themis Temple","King of Dragons",14,6108,6458,449,161,"Tier 5","Light","2,15-23","5,8-16","drop"],
-    ["Clayus Prison","Ground of Malice",11,4146,4420,390,162,"Tier 5","Dark","3,8-16","5,15-23","drop"],
-    ["Clayus Prison","Amethyst Altar",11,3758,4046,355,163,"Tier 5","Dark","3,8-16","5,15-23","drop"],
-    ["Clayus Prison","Well Leading Underground",11,5390,6145,525,164,"Tier 5","Dark","3,8-16","5,15-23","drop"],
-    ["Clayus Prison","Witch of the Darkness",11,4212,4594,401,165,"Tier 5","Dark","3,8-16","5,15-23","drop"],
-    ["Clayus Prison","Punisher from Hell",14,5890,6806,454,166,"Tier 5","Dark","3,8-16","5,15-23","drop"],
+    ["Hyperion Lava Flow","Blazing River",10,4179,4737,446,142,"Tier 5","Red","1,8-15","3,15-22","drop"],
+    ["Hyperion Lava Flow","Ruby Altar",10,3476,3678,358,143,"Tier 5","Red","1,8-15","3,15-22","drop"],
+    ["Hyperion Lava Flow","Lava Tube",10,4799,5753,528,144,"Tier 5","Red","1,8-15","3,15-22","drop"],
+    ["Hyperion Lava Flow","Serpent Loved by Flame",10,3915,4401,416,145,"Tier 5","Red","1,8-15","3,15-22","drop"],
+    ["Hyperion Lava Flow","Blazing Dragon",12,5749,6772,522,146,"Tier 5","Red","1,8-15","3,15-22","drop"],
+    ["Oceanus Falls","Eternal Waterfall",10,4216,4600,441,147,"Tier 5","Blue","1,15-22","4,8-15","drop"],
+    ["Oceanus Falls","Sapphire Altar",10,3102,3971,354,148,"Tier 5","Blue","1,15-22","4,8-15","drop"],
+    ["Oceanus Falls","Whirlpool in the Waterfall Basin",10,4802,5676,524,149,"Tier 5","Blue","1,15-22","4,8-15","drop"],
+    ["Oceanus Falls","Invitation to the Abyss",10,3894,4346,412,150,"Tier 5","Blue","1,15-22","4,8-15","drop"],
+    ["Oceanus Falls","Great Dragon of the Abyss",12,5640,6694,514,151,"Tier 5","Blue","1,15-22","4,8-15","drop"],
+    ["Kronos Forest","Forest of Darkness",10,4311,4888,460,152,"Tier 5","Green","2,8-15","4,15-22","drop"],
+    ["Kronos Forest","Jasper Altar",10,3336,3790,357,153,"Tier 5","Green","2,8-15","4,15-22","drop"],
+    ["Kronos Forest","Gate to the Mystic Land",10,4898,5554,523,154,"Tier 5","Green","2,8-15","4,15-22","drop"],
+    ["Kronos Forest","Fairies' Paradise",10,3836,4307,408,155,"Tier 5","Green","2,8-15","4,15-22","drop"],
+    ["Kronos Forest","Ancient Guardian",12,5885,6728,526,156,"Tier 5","Green","2,8-15","4,15-22","drop"],
+    ["Rhea-Themis Temple","Divinegon's Den",11,4387,5022,428,157,"Tier 5","Light","2,15-22","5,8-15","drop"],
+    ["Rhea-Themis Temple","Golden Altar",11,3492,3977,340,158,"Tier 5","Light","2,15-22","5,8-15","drop"],
+    ["Rhea-Themis Temple","Room of Prayers",11,3273,5700,408,159,"Tier 5","Light","2,15-22","5,8-15","drop"],
+    ["Rhea-Themis Temple","The Price of a Smile",11,4155,4504,394,160,"Tier 5","Light","2,15-22","5,8-15","drop"],
+    ["Rhea-Themis Temple","King of Dragons",14,6108,6458,449,161,"Tier 5","Light","2,15-22","5,8-15","drop"],
+    ["Clayus Prison","Ground of Malice",11,4146,4420,390,162,"Tier 5","Dark","3,8-15","5,15-22","drop"],
+    ["Clayus Prison","Amethyst Altar",11,3758,4046,355,163,"Tier 5","Dark","3,8-15","5,15-22","drop"],
+    ["Clayus Prison","Well Leading Underground",11,5390,6145,525,164,"Tier 5","Dark","3,8-15","5,15-22","drop"],
+    ["Clayus Prison","Witch of the Darkness",11,4212,4594,401,165,"Tier 5","Dark","3,8-15","5,15-22","drop"],
+    ["Clayus Prison","Punisher from Hell",14,5890,6806,454,166,"Tier 5","Dark","3,8-15","5,15-22","drop"],
     ["Tower to the Sky","Guards of the Lower Levels",12,5670,6225,496,167,"Tier 5","Tower","6","0","drop"],
     ["Tower to the Sky","Peaceful Garden",12,3838,4282,339,168,"Tier 5","Tower","6","0","drop"],
     ["Tower to the Sky","White Snake Road",12,3932,4018,332,169,"Tier 5","Tower","6","0","drop"],
@@ -157,31 +157,31 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Ocean of Heaven","Diva in a Sea of Clouds",12,4462,4896,390,174,"Tier 5","Tower","6","0","drop"],
     ["Ocean of Heaven","Guardian of Skies and Seas",12,4745,5354,421,175,"Tier 5","Tower","6","0","drop"],
     ["Ocean of Heaven","Sea-God of Heaven",15,6016,7308,445,176,"Tier 5","Tower","6","0","drop"],
-    ["Vesta Cave","Bottomless Void",13,6254,7172,517,177,"Tier 6","Red","1,8-16","3,15-23","drop"],
-    ["Vesta Cave","Underground Ruin",13,6146,6584,490,178,"Tier 6","Red","1,8-16","3,15-23","drop"],
-    ["Vesta Cave","Underground Fire Lake",13,5049,6234,434,179,"Tier 6","Red","1,8-16","3,15-23","drop"],
-    ["Vesta Cave","Center of the Earth",13,4950,5261,393,180,"Tier 6","Red","1,8-16","3,15-23","drop"],
-    ["Vesta Cave","Lava Dragon of Mantle",16,7320,8368,491,181,"Tier 6","Red","1,8-16","3,15-23","drop"],
-    ["Frozen Soil of Prosell","Frozen Ground",13,6342,7147,519,182,"Tier 6","Blue","1,15-23","4,8-16","drop"],
-    ["Frozen Soil of Prosell","Frost Woods",13,5838,6255,466,183,"Tier 6","Blue","1,15-23","4,8-16","drop"],
-    ["Frozen Soil of Prosell","Frozen Castle",13,5471,5823,435,184,"Tier 6","Blue","1,15-23","4,8-16","drop"],
-    ["Frozen Soil of Prosell","Sky-Scraping Iceberg",13,4330,5483,378,185,"Tier 6","Blue","1,15-23","4,8-16","drop"],
-    ["Frozen Soil of Prosell","Ice Crystal Dragon",16,7295,8307,488,186,"Tier 6","Blue","1,15-23","4,8-16","drop"],
-    ["Mars Crater","Great Mountains of Olympus",13,5916,6881,493,187,"Tier 6","Green","2,8-16","4,15-23","drop"],
-    ["Mars Crater","Great Mountain Caves",13,5732,6551,473,188,"Tier 6","Green","2,8-16","4,15-23","drop"],
-    ["Mars Crater","Shooting Star Woods",13,5516,6032,445,189,"Tier 6","Green","2,8-16","4,15-23","drop"],
-    ["Mars Crater","Dragon's Den",13,4305,5103,362,190,"Tier 6","Green","2,8-16","4,15-23","drop"],
-    ["Mars Crater","Star-Breaking Dragon",16,6910,8504,482,191,"Tier 6","Green","2,8-16","4,15-23","drop"],
-    ["Jupiter, City in the Sky","Floating Island",14,6596,7766,513,192,"Tier 6","Light","2,15-23","5,8-16","drop"],
-    ["Jupiter, City in the Sky","Abandoned City",14,6306,7211,483,193,"Tier 6","Light","2,15-23","5,8-16","drop"],
-    ["Jupiter, City in the Sky","Claw of Judgment",14,6200,6437,452,194,"Tier 6","Light","2,15-23","5,8-16","drop"],
-    ["Jupiter, City in the Sky","Isolated Ruin of the Sky",14,5243,6039,403,195,"Tier 6","Light","2,15-23","5,8-16","drop"],
-    ["Jupiter, City in the Sky","Lightning Dragons of the Skies",17,7555,9608,505,196,"Tier 6","Light","2,15-23","5,8-16","drop"],
-    ["Junos Island","Forbidden Isle",14,6652,7624,510,197,"Tier 6","Dark","3,8-16","5,15-23","drop"],
-    ["Junos Island","City of Corpses",14,6678,7159,495,198,"Tier 6","Dark","3,8-16","5,15-23","drop"],
-    ["Junos Island","True Nightmare",14,5791,6723,447,199,"Tier 6","Dark","3,8-16","5,15-23","drop"],
-    ["Junos Island","Rusted Altar",14,5341,5807,399,200,"Tier 6","Dark","3,8-16","5,15-23","drop"],
-    ["Junos Island","Chaos Dragon of Ruins",17,8590,9107,521,201,"Tier 6","Dark","3,8-16","5,15-23","drop"],
+    ["Vesta Cave","Bottomless Void",13,6254,7172,517,177,"Tier 6","Red","1,8-15","3,15-22","drop"],
+    ["Vesta Cave","Underground Ruin",13,6146,6584,490,178,"Tier 6","Red","1,8-15","3,15-22","drop"],
+    ["Vesta Cave","Underground Fire Lake",13,5049,6234,434,179,"Tier 6","Red","1,8-15","3,15-22","drop"],
+    ["Vesta Cave","Center of the Earth",13,4950,5261,393,180,"Tier 6","Red","1,8-15","3,15-22","drop"],
+    ["Vesta Cave","Lava Dragon of Mantle",16,7320,8368,491,181,"Tier 6","Red","1,8-15","3,15-22","drop"],
+    ["Frozen Soil of Prosell","Frozen Ground",13,6342,7147,519,182,"Tier 6","Blue","1,15-22","4,8-15","drop"],
+    ["Frozen Soil of Prosell","Frost Woods",13,5838,6255,466,183,"Tier 6","Blue","1,15-22","4,8-15","drop"],
+    ["Frozen Soil of Prosell","Frozen Castle",13,5471,5823,435,184,"Tier 6","Blue","1,15-22","4,8-15","drop"],
+    ["Frozen Soil of Prosell","Sky-Scraping Iceberg",13,4330,5483,378,185,"Tier 6","Blue","1,15-22","4,8-15","drop"],
+    ["Frozen Soil of Prosell","Ice Crystal Dragon",16,7295,8307,488,186,"Tier 6","Blue","1,15-22","4,8-15","drop"],
+    ["Mars Crater","Great Mountains of Olympus",13,5916,6881,493,187,"Tier 6","Green","2,8-15","4,15-22","drop"],
+    ["Mars Crater","Great Mountain Caves",13,5732,6551,473,188,"Tier 6","Green","2,8-15","4,15-22","drop"],
+    ["Mars Crater","Shooting Star Woods",13,5516,6032,445,189,"Tier 6","Green","2,8-15","4,15-22","drop"],
+    ["Mars Crater","Dragon's Den",13,4305,5103,362,190,"Tier 6","Green","2,8-15","4,15-22","drop"],
+    ["Mars Crater","Star-Breaking Dragon",16,6910,8504,482,191,"Tier 6","Green","2,8-15","4,15-22","drop"],
+    ["Jupiter, City in the Sky","Floating Island",14,6596,7766,513,192,"Tier 6","Light","2,15-22","5,8-15","drop"],
+    ["Jupiter, City in the Sky","Abandoned City",14,6306,7211,483,193,"Tier 6","Light","2,15-22","5,8-15","drop"],
+    ["Jupiter, City in the Sky","Claw of Judgment",14,6200,6437,452,194,"Tier 6","Light","2,15-22","5,8-15","drop"],
+    ["Jupiter, City in the Sky","Isolated Ruin of the Sky",14,5243,6039,403,195,"Tier 6","Light","2,15-22","5,8-15","drop"],
+    ["Jupiter, City in the Sky","Lightning Dragons of the Skies",17,7555,9608,505,196,"Tier 6","Light","2,15-22","5,8-15","drop"],
+    ["Junos Island","Forbidden Isle",14,6652,7624,510,197,"Tier 6","Dark","3,8-15","5,15-22","drop"],
+    ["Junos Island","City of Corpses",14,6678,7159,495,198,"Tier 6","Dark","3,8-15","5,15-22","drop"],
+    ["Junos Island","True Nightmare",14,5791,6723,447,199,"Tier 6","Dark","3,8-15","5,15-22","drop"],
+    ["Junos Island","Rusted Altar",14,5341,5807,399,200,"Tier 6","Dark","3,8-15","5,15-22","drop"],
+    ["Junos Island","Chaos Dragon of Ruins",17,8590,9107,521,201,"Tier 6","Dark","3,8-15","5,15-22","drop"],
     ["Starlight Sanctuary","Guardian Dragon of God",14,6100,7150,474,202,"Tier 6","Tower","6","0","drop"],
     ["Starlight Sanctuary","Goddess of Harvest",14,6900,8250,542,203,"Tier 6","Tower","6","0","drop"],
     ["Starlight Sanctuary","Goddess of War",14,6400,7450,495,204,"Tier 6","Tower","6","0","drop"],
@@ -192,16 +192,20 @@ for (i in d) { d[i].unlocked = true; }
 var intRegex = /^\d+$/;
 function numberWithCommas(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 var avgExpMode = true;
-var opt = {};
 var solutions = {}; solutions[0] = {d:[],avg:0,min:0};
 
-// Given a dungeon, and a bonus type, checks if bonus is currently active.
+// Given a dungeon, and a bonus type, checks if bonus is active
 // @type is "drop" "coin"
-function is_bonus(dd, type) {
+function is_bonus(dd, type, timestamp) {
     if (!dd[11] || dd[11] !== type) {
         return false;
     }
-    var nowM = moment();
+    var nowM;
+    if (typeof timestamp=='object') {
+        nowM = timestamp;
+    } else {
+        nowM = moment();
+    }
     nowM.tz("America/Los_Angeles");
     var mday = nowM.day()+"";
     var mhour = nowM.hour();
@@ -227,11 +231,11 @@ function is_bonus(dd, type) {
     return false;
 }
 
-function filterDungeons() {
-    opt = {};
+function filterDungeons(timestamp) {
+    var opt = {};
     for (i in d) {
         if (!d[i].unlocked) { continue; }
-        var stam = is_bonus(d[i], "stam") ? Math.round(d[i][2]/2) : d[i][2];
+        var stam = is_bonus(d[i], "stam", timestamp) ? Math.round(d[i][2]/2) : d[i][2];
         var low = d[i][3];
         var high = d[i][4];
         var avg = (low+high)/2;
@@ -245,13 +249,17 @@ function filterDungeons() {
             }
         }
     }
+    return opt;
 }
 
 function delete_solutions() {
     solutions = null;
     solutions = {}; solutions[0] = {d:[],avg:0,min:0};
 }
-solve_unbounded_knapsack = function (stamina) {
+
+
+// @timestamp is optional parameter
+solve_unbounded_knapsack = function (stamina, timestamp) {
     // cap at some stamina to prevent running too long?
     if (stamina >= 2000) { return null; }
     // todo: if the last time this was run was over an hour ago, re-run
@@ -259,7 +267,7 @@ solve_unbounded_knapsack = function (stamina) {
     if (""+stamina in solutions) {
         return;
     }
-    filterDungeons();
+    var opt = filterDungeons(timestamp);
     var currentStamina = 1;
     while (currentStamina <= stamina) {
         if (""+currentStamina in solutions) {
@@ -293,22 +301,28 @@ solve_unbounded_knapsack = function (stamina) {
 
 find_consolation = function(u_stam, u_exp) {
     var tryStam = u_stam;
+    var tryTime = moment();
     while (true) {
-        solve_unbounded_knapsack(tryStam);
+        solve_unbounded_knapsack(tryStam, tryTime);
+        var sorted = find_all_matches_sorted(tryStam, u_exp, tryTime);
+
         if (avgExpMode && (solutions[tryStam].avg > u_exp)) {
-            return tryStam;
+            return [tryStam, tryTime, sorted];
         } else if (!avgExpMode && (solutions[tryStam].min > u_exp)) {
-            return tryStam;
+            return [tryStam, tryTime, sorted];
         }
         tryStam++;
+        tryTime.add('minutes', 10);
     }
 }
 
-find_all_matches_sorted = function(stam, exp) {
+// finds all dungeons that match the given stam/exp
+// timestamp is an optional parameter - can be in the future to check if bonuses apply at that time.
+find_all_matches_sorted = function(stam, exp, timestamp) {
     var all_matches = [];
     for (i in d) {
         var v = avgExpMode ? (d[i][3] + d[i][4])/2 : d[i][3];
-        var dstam = is_bonus(d[i], "stam") ? Math.round(d[i][2]/2) : d[i][2];
+        var dstam = is_bonus(d[i], "stam", timestamp) ? Math.round(d[i][2]/2) : d[i][2];
         if ((d[i].unlocked) && dstam <= stam && v >= exp) {
             all_matches.push( d[i] );
         }
@@ -337,6 +351,7 @@ compute = function() {
     $('#but_wait').show();
     $('#u_exp').parent().removeClass('error');
     $('#u_stam').parent().removeClass('error');
+    delete_solutions();
 
     var u_stam = $('#u_stam').val();
     var u_exp = $('#u_exp').val();
@@ -374,7 +389,6 @@ compute = function() {
 
     u_stam = parseInt(u_stam);
     u_exp = parseInt(u_exp);
-    filterDungeons();
     solve_unbounded_knapsack(u_stam);
     var sorted = find_all_matches_sorted(u_stam, u_exp);
 
@@ -462,21 +476,86 @@ compute = function() {
             $('#consolation').show();
             $('#consolation_alert').show();
             var consolation = find_consolation(u_stam, u_exp);
-            additional_mins = (consolation - u_stam) * 10;
+
+            //  An Ugly copy/paste job below
+            var consolation_stam = consolation[0];
+            var consolation_time = consolation[1];
+            var consolation_sorted = consolation[2];
+
+            // round down to the nearest 10-minute mark, since stamina increases at 10 minute intervals
+            consolation_time.minutes(Math.floor(consolation_time.minutes()/10)*10 + 1);
+
+            var additional_mins = consolation_time.diff(moment(), "minutes");
             if (additional_mins <= 60) {
-                $('#consolation_msg').html("In <b>"+additional_mins+" minutes</b>, you'll have <b>"+consolation+"</b> stamina to run:");
+                $('#consolation_msg').html("In <b>"+additional_mins+" minutes</b>, you'll have <b>"+consolation_stam+"</b> stamina for:");
             } else {
-                ready_time = moment().add('minutes', additional_mins);
-                $('#consolation_msg').html("At <b>"+(ready_time.format("h:mm a"))+"</b>, you'll have "+consolation+" stamina to run:");
+                // to show the time, subtract 1 minute so it show up cleanly, e.g. "At 3:50, you'll have... " instead of "3:51"
+                consolation_time.subtract("minutes", 1);
+                $('#consolation_msg').html("At <b>"+(consolation_time.format("h:mm a"))+"</b>, you'll have "+consolation_stam+" stamina to run:");
             }
-            var cdungeon = solutions[consolation].d;
-            for (var m = cdungeon.length-1; m>=0; m--) {
+
+            // multi-dungeon
+            if (solutions[consolation_stam].d.length > 1) {
+                var h1 = "", h2 = "", h3 = "", h4 = "";
+                for (di in solutions[consolation_stam].d) {
+                    h1 += ('<div>'+solutions[consolation_stam].d[di][0] +
+                            ' - <a class="linkify" target="_blank" href="http://www.puzzledragonx.com/en/mission.asp?m='
+                            +solutions[consolation_stam].d[di][6]+'" >'+ solutions[consolation_stam].d[di][1] +'</a></div>');
+                    h2 += ('<div>'+numberWithCommas(Math.round((solutions[consolation_stam].d[di][3]+solutions[consolation_stam].d[di][4])/2))+'</div>');
+                    h3 += ('<div>'+numberWithCommas(solutions[consolation_stam].d[di][3])+'</div>');
+                    h4 += ('<div>'+solutions[consolation_stam].d[di][2]+'</div>');
+                }
                 $('#c_rows').append("<tr>" +
-                    "<td>"+cdungeon[m][0]+" - <wbr><b><a class='linkify' target='_blank' href='http://www.puzzledragonx.com/en/mission.asp?m="+cdungeon[m][6]+"'>"+cdungeon[m][1]+"</a></b></td>" +
-                    "<td style='text-align: right; padding-right: 0;'>"+numberWithCommas(Math.round((cdungeon[m][3]+cdungeon[m][4])/2))+"</td>" +
-                    "<td style='text-align: right; padding-right: 0;' class='nobreak'>"+numberWithCommas(cdungeon[m][3])+"</td>" +
-                    "<td style='text-align: right;'>"+cdungeon[m][2]+"</td></tr>");
+                    '<td style="padding-right: 0;"><div class="multi_badge">Multiple<br>Dungeons</div>'+h1+'</td>' +
+                    "<td style='text-align: right;'>"+h2+"</td>" +
+                    "<td style='text-align: right; padding-right: 0;' class='nobreak'>"+h3+"</td>" +
+                    "<td style='text-align: right;'>"+h4+"</td></tr>");
             }
+
+            // single dungeons
+            if (consolation_sorted && consolation_sorted.length > 0) {
+                var copy = consolation_sorted.slice();
+                copy.sort(function(a,b) { return a[6]-b[6]});
+                var easiestId = copy[0][6];
+
+                for (s in consolation_sorted) {
+                    var tag = "";
+                    if (consolation_sorted.length>1 && consolation_sorted[s][6] === easiestId){
+                        tag = "<span class='easiest_badge'>Easiest</span>";
+                    }
+                    if (is_bonus(consolation_sorted[s], "coin", consolation_time)) {
+                        tag += "<span class='coin_badge'>2x Coin</span>";
+                    } else if (is_bonus(consolation_sorted[s], "drop", consolation_time)) {
+                        tag += "<span class='drop_badge'>1.5 Drop</span>";
+                    } else if (is_bonus(consolation_sorted[s], "stam", consolation_time)) {
+                        tag += "<span class='stamina_badge'>1/2 Stam</span>";
+                    }
+                    $('#c_rows').append("<tr>" +
+                        "<td style='padding-right: 0;'>"+consolation_sorted[s][0]+" - <wbr><b>" +
+                        "<a class='linkify' target='_blank' href='http://www.puzzledragonx.com/en/mission.asp?m="+consolation_sorted[s][6]+"'>"
+                        +consolation_sorted[s][1]+"</a></b>"+tag+"</td>" +
+                        "<td style='text-align: right;'>"+numberWithCommas(Math.round((consolation_sorted[s][3]+consolation_sorted[s][4])/2))+"</td>" +
+                        "<td style='text-align: right; padding-right: 0;' class='nobreak'>"+numberWithCommas(consolation_sorted[s][3])+"</td>" +
+                        "<td style='text-align: right;'>"+consolation_sorted[s][2]+"</td></tr>");
+                }
+            }
+
+//            var consolation = find_consolation(u_stam, u_exp);
+//            additional_mins = (consolation - u_stam) * 10;
+//            if (additional_mins <= 60) {
+//                $('#consolation_msg').html("In <b>"+additional_mins+" minutes</b>, you'll have <b>"+consolation+"</b> stamina to run:");
+//            } else {
+//                ready_time = moment().add('minutes', additional_mins);
+//                $('#consolation_msg').html("At <b>"+(ready_time.format("h:mm a"))+"</b>, you'll have "+consolation+" stamina to run:");
+//            }
+//            var cdungeon = solutions[consolation].d;
+//            for (var m = cdungeon.length-1; m>=0; m--) {
+//                $('#c_rows').append("<tr>" +
+//                    "<td>"+cdungeon[m][0]+" - <wbr><b><a class='linkify' target='_blank' href='http://www.puzzledragonx.com/en/mission.asp?m="+cdungeon[m][6]+"'>"+cdungeon[m][1]+"</a></b></td>" +
+//                    "<td style='text-align: right; padding-right: 0;'>"+numberWithCommas(Math.round((cdungeon[m][3]+cdungeon[m][4])/2))+"</td>" +
+//                    "<td style='text-align: right; padding-right: 0;' class='nobreak'>"+numberWithCommas(cdungeon[m][3])+"</td>" +
+//                    "<td style='text-align: right;'>"+cdungeon[m][2]+"</td></tr>");
+//            }
         }
     }
 //    for IE 8
@@ -614,7 +693,6 @@ $(document).ready(function() {
                     savePref("locked", lockedP, 180);
                 }
 
-                filterDungeons();
                 delete_solutions();
             } else {
                 $(this).removeClass("checked");
@@ -636,7 +714,6 @@ $(document).ready(function() {
                     }
                     savePref("locked", lockedP, 180);
                 }
-                filterDungeons();
                 delete_solutions();
             }
             var p1 = subd.parent().find('.checkbox2:checked').length;
@@ -679,7 +756,6 @@ $(document).ready(function() {
             avgExpMode = false;
         }
         savePref("expMode", avgExpMode, 180);
-        filterDungeons();
         delete_solutions();
     });
 
@@ -697,7 +773,6 @@ $(document).ready(function() {
             d[lockedDungeons[l]].unlocked = false;
             $('#cc'+lockedDungeons[l]).prop('checked', false).trigger("change");
         }
-        filterDungeons();
     } else {
         // uncheck Starlight Sanctuary if they have not yet configured settings
         $($('.checkbox1')[0]).trigger("click");
