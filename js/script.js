@@ -5,8 +5,8 @@ if (showIntro === null || showIntro) {
     $('#intro').show();
 }
 var showSettingIntro = readPref("showSettingIntro");
-if (showSettingIntro !== null && !showSettingIntro) {
-    $('#intro2').hide();
+if (showSettingIntro === null || showSettingIntro) {
+    $('#intro2').show();
 }
 
 // 0 - dungeon name
