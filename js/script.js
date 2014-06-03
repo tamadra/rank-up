@@ -21,6 +21,7 @@ if (showSettingIntro === null || showSettingIntro) {
 // 9 - event time 1         all times in PST/PDT. 0 is Sunday, 6 is Saturday
 // 10 - event time 2        all times in PST/PDT. 0 is Sunday, 6 is Saturday
 // 11 - event type  ("coin", "drop", "stam")
+// 12 - array index
 d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Departure Tower","Room of Departure",3,43,55,16,2,,,,,],
     ["Departure Tower","The First Trial",5,87,111,20,3,,,,,],
@@ -188,7 +189,7 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Starlight Sanctuary","Queen of the Gods",14,8300,9500,636,205,"Tier 6","Tower","6","0","drop"],
     ["Starlight Sanctuary","King of the Gods",17,13000,14800,818,206,"Tier 6","Tower","6","0","drop"]];
 
-for (i in d) { d[i].unlocked = true; }
+for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
 function numberWithCommas(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 var avgExpMode = true;
@@ -318,6 +319,82 @@ find_consolation = function(u_stam, u_exp) {
     }
 }
 
+custom_sort = function (mode) {
+    var rRows = $('#r_rows'),
+        rTrs = rRows.children("tr");
+    if (mode!==0) {
+        rTrs.sort(function(a,b){
+            var an = parseInt($($(a).children('td')[mode]).text().replace(",",""));
+            var bn = parseInt($($(b).children('td')[mode]).text().replace(",",""));
+            if (mode==3) {
+                if (an==bn) {
+                    var ad = $($(a).children('td')[0]).data("id");
+                    var bd = $($(b).children('td')[0]).data("id");
+                    if (ad.length!==bd.length) {
+                        return ad.length - bd.length;
+                    }
+                    return ad[0] - bd[0];
+                }
+                return parseInt(an)-parseInt(bn);
+            }
+            if (an==bn) {
+                var ad = $($(a).children('td')[0]).data("id");
+                var bd = $($(b).children('td')[0]).data("id");
+                if (ad.length!==bd.length) {
+                    return ad.length - bd.length;
+                }
+                return ad[0] - bd[0];
+            }
+            return bn-an;
+        });
+    } else if (mode===0) {
+        rTrs.sort(function(a,b){
+            var an = $($(a).children('td')[0]).data("id");
+            var bn = $($(b).children('td')[0]).data("id");
+            if (bn.length!==an.length) {
+                return an.length - bn.length;
+            }
+            else {
+                var aStaminaTotal = 0;
+                for (var a in an) {
+                    aStaminaTotal += (d[an[a]][2]);
+                    aStaminaTotal += (an[a]);
+
+                }
+                var bStaminaTotal = 0;
+                for (var b in bn) {
+                    bStaminaTotal += (d[bn[b]][2]);
+                    bStaminaTotal += (bn[b]);
+                }
+                return aStaminaTotal - bStaminaTotal;
+            }
+        });
+    }
+    rTrs.detach().appendTo(rRows);
+    $('.table-striped>tbody>tr:nth-child(even)>td').removeClass("odd").addClass('even');
+    $('.table-striped>tbody>tr:nth-child(odd)>td').removeClass("even").addClass('odd');
+}
+sortBy = function(elem, idx) {
+    if (idx==0) {
+        custom_sort(idx);
+        $('#sortMode').text("easiest Dungeon");
+    }
+    if (idx==4) {
+        $('#sortMode').text("extra Stamina");
+        custom_sort(idx);
+    } else if (idx==1) {
+        $('#sortMode').text("most avg EXP");
+        custom_sort(idx);
+    } else if (idx ==2) {
+        $('#sortMode').text("most EXP");
+        custom_sort(idx);
+    } else if (idx ==3) {
+        $('#sortMode').text("Stamina cost");
+        custom_sort(idx);
+    }
+    $('.activeSort').removeClass('activeSort');
+    $(elem).addClass('activeSort');
+}
 // finds all single dungeons that match the given stam/exp
 // timestamp is an optional parameter - can be in the future to check if bonuses apply at that time.
 find_all_matches_sorted = function(stam, exp, timestamp) {
@@ -355,7 +432,7 @@ printResults = function(solutions, divId, u_stam) {
                 lastColumn="<td class='shrink' style='text-align: center; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+Math.max((u_stam-parseInt(dungeon[2])), 0)+"</td>";
             }
             $(divId).append("<tr>" +
-                "<td class='expand' style='padding-left:15px;'>"+tag+"<div class='dungeonName'>"+dungeon[0]+"</div>"+
+                "<td data-id='["+dungeon[12]+"]' class='expand' style='padding-left:15px;'>"+tag+"<div class='dungeonName'>"+dungeon[0]+"</div>"+
                     "<a class='linkify subDungeonName' target='_blank' href='http://www.puzzledragonx.com/en/mission.asp?m="+dungeon[6]+"'>"
                     +dungeon[1]+"</a></td>" +
                 "<td class='shrink' style='text-align: right; vertical-align: middle; padding-left: 0; padding-right: 20px;'>"+numberWithCommas(Math.round(solution.avg))+"</td>" +
@@ -364,8 +441,9 @@ printResults = function(solutions, divId, u_stam) {
                 lastColumn+
                 "</tr>");
         } else if (solution.n > 1) {
-            var h1 = "", h2 = "", h3 = "", h4 = "", dungeonStr = [];
+            var h1 = "", h2 = "", h3 = "", h4 = "", dungeonStr = [], dungeonIds = [];
             for (var di=solution.d.length-1; di>=0; di--) {
+                dungeonIds.push(solution.d[di][12]);
                 dungeonStr.push('<a class="linkify subDungeonName" target="_blank" href="http://www.puzzledragonx.com/en/mission.asp?m='+
                     solution.d[di][6]+'" >'+ solution.d[di][1] +'</a>');
                 h1 += ('<div class="minirow"><div class="dungeonName">'+solution.d[di][0] + '</div>' +
@@ -380,7 +458,7 @@ printResults = function(solutions, divId, u_stam) {
                 lastColumn = "<td class='shrink' style='vertical-align: middle; text-align: center; padding-left: 0; padding-right: 10px;'>"+Math.max((u_stam-solution.totalStamina), 0)+"</td>";
             }
             $(divId).append("<tr>" +
-                "<td class='expand' style='padding-left:15px;'>" +
+                "<td data-id='["+dungeonIds.join()+"]' class='expand' style='padding-left:15px;'>" +
                     "<span style='color: #7F8289; font-weight: 300; font-size: 13px;'>"+solution.d.length+" Dungeons:</span><br>"+
                     ""+dungeonStr.join("<span style='color:white; font-size: 13px;'> + </span>")+ "</td>"+
                 "<td class='shrink' style='vertical-align: middle; text-align: right; padding-left: 0; padding-right:20px; '>"+numberWithCommas(Math.round(solution.avg))+"</td>"+
@@ -503,7 +581,7 @@ compute = function() {
 
         $('#ranked-container').show();
         if (completeSolutions.length>1) {
-            $('#num_results').html(completeSolutions.length+" options, sorted by most EXP");
+            $('#num_results').html(completeSolutions.length+" options&nbsp;&nbsp;&nbsp;&nbsp;sorted by <span id='sortMode'>most avg EXP</span>");
         }
         printResults(completeSolutions, "#r_rows", u_stam);
     }

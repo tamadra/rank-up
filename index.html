@@ -10,7 +10,15 @@
 <!-- Bootstrap css modified to include main.css -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
-
+#ranked-container th:hover {
+    color:white;
+}
+#sortMode {
+    color:white;
+}
+.activeSort {
+    color: white;
+}
 .dungeonName {
     font-weight: 300; font-size: 13px;
     color: #7F8289;
@@ -535,6 +543,7 @@ ul {
     display: block;
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+/*@media only screen and (min-width : 320px) and (max-width : 568px) {*/
     .header h2 {
         margin-left: 30px;
         line-height: 78px;
@@ -553,11 +562,11 @@ ul {
         width: 100%; padding-left:0; float: left; position: relative;
     }
     #u_exp {
-        width:150px;
+        width:150px; height: 79px;
         font-size: 23px;
     }
     #u_stam {
-        width:150px;
+        width:150px; height: 79px;
         font-size: 23px;
     }
     .menu-nav {
@@ -691,11 +700,11 @@ ul {
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th style="">Dungeon(s)</th>
-                                    <th style="padding-left: 0; padding-right: 15px; text-align: right;" >avg&nbsp;&nbsp;&nbsp;<br>EXP&darr;</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: center; padding-right: 8px;">extra<br>Stam</th>
+                                    <th onclick="sortBy(this, 0);" style="cursor: pointer;">Dungeon(s)</th>
+                                    <th class="activeSort" onclick="sortBy(this, 1);" style="cursor: pointer; padding-left: 0; padding-right: 15px; text-align: right;" >avg&nbsp;<br>EXP</th>
+                                    <th onclick="sortBy(this, 2);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
+                                    <th onclick="sortBy(this, 3);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
+                                    <th onclick="sortBy(this, 4);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center; padding-right: 8px;">extra<br>Stam</th>
                                 </tr>
                                 </thead>
                                 <tbody id="r_rows">
