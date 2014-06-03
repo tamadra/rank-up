@@ -8,7 +8,12 @@ var showSettingIntro = readPref("showSettingIntro");
 if (showSettingIntro === null || showSettingIntro) {
     $('#intro2').show();
 }
-
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]").toLowerCase();
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search.toLowerCase());
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 // 0 - dungeon name
 // 1 - subdungeon
 // 2 - stamina cost
@@ -633,7 +638,8 @@ compute = function() {
 $(document).ready(function() {
     // polyfill for IE8. placeholder bug
     $('input, textarea').placeholder();
-    $('[autofocus]:not(:focus)').eq(0).focus();
+
+    $('#u_exp').focus();
 
     $('#u_exp, #u_stam').focus(function(event){
         $(event.target).parent().addClass('active');
@@ -842,4 +848,23 @@ $(document).ready(function() {
         // uncheck Starlight Sanctuary if they have not yet configured settings
         $($('.checkbox1')[0]).trigger("click");
     }
+
+    var paramStamina = getParameterByName("stamina");
+    var paramExp = getParameterByName("exp");
+    var doCompute = false;
+
+    if (paramStamina!=='' && intRegex.test(paramStamina)) {
+        $('#u_stam').val(paramStamina);
+        doCompute=true;
+    }
+    if (paramExp!=='' && intRegex.test(paramExp)) {
+        $('#u_exp').val(paramExp);
+        doCompute = true;
+    }
+    if (doCompute) {
+        compute();
+        $('#u_exp').blur();
+        $('#u_stam').blur();
+    }
+
 });
