@@ -208,7 +208,7 @@ function is_bonus(dd, type, timestamp) {
     }
     var nowM;
     if (typeof timestamp=='object') {
-        nowM = timestamp;
+        nowM = timestamp.clone();
     } else {
         nowM = moment();
     }
