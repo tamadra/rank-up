@@ -633,8 +633,19 @@ table#quicklook tr.odd {
     background-color: #26292E;
 }
 #quick_look_time{
-    font-size: 16px; float: right; margin: 5px 15px 5px 0; color: #ccc;
+    font-size: 12px;
+    width: 100px;
+    /*margin: 5px 15px 5px 0; */
+    color: #ccc;
 }
+#refresh_ql {
+    cursor: pointer;
+    color: white;
+}
+#refresh_ql:hover {
+    color: #DE5E60;
+}
+
 #num_results {
     width: 100%;
     margin: 15px 0 0;
@@ -776,7 +787,12 @@ h4 {
                 <div class="tab-pane active" id="tab1">
                     <table id="quicklook" style="width: 100%">
                         <tr>
-                            <th> To get ___ EXP </th><th> You'll need ___ Stamina </th><th><span id="quick_look_time"></span></th>
+                            <th> To get ___ EXP </th>
+                            <th> You'll need ___ Stamina </th>
+                            <th style="text-align: right;">
+                                <span id="quick_look_time"></span>
+                                <a id="refresh_ql" data-toggle="tooltip" data-placement="top" title='Recalculate "Quick Look-up" table now' class="font-fix">&#xe058;</a>
+                            </th>
                         </tr>
                         <tr class="even">
                             <td> 1,000 </td> <td id="td1000"> - </td><td id="options1000"></td>

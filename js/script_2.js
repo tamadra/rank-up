@@ -1,5 +1,5 @@
 
-$('#timezone').text(moment().format("[GMT] ZZ"));
+$('#timezone').html("<span class='font-fix'>&#xe010;</span> "+moment().format("[GMT] ZZ"));
 var showIntro = readPref("showIntro");
 if (showIntro === null || showIntro) {
     $('#intro').show();
@@ -878,8 +878,9 @@ $(document).ready(function() {
         compute();
         $('#u_exp').blur();
         $('#u_stam').blur();
-    } else {
-        var breakPoints = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000];
+    }
+    var breakPoints = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000];
+    function refreshQLU () {
         for (var b in breakPoints) {
             var expB = breakPoints[b];
             var consolation = find_consolation(0, expB);
@@ -894,4 +895,7 @@ $(document).ready(function() {
         }
         $('#quick_look_time').text("calculated "+moment().format("h:mm a"));
     }
+    refreshQLU();
+    $('#refresh_ql').on('click', refreshQLU);
+    $('#refresh_ql').tooltip();
 });
