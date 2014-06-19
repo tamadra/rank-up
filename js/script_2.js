@@ -594,13 +594,17 @@ compute = function() {
                 if (completeSolutions.length==1) {
 //                    $('#num_results').html("With "+u_stam+" Stamina, run:");
                 } else {
-                    $('#num_results').html("With "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> dungeon options.&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>highest avg EXP</span>");
+                    $('#num_results').html("With "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> dungeon options.&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        "Sorted by&nbsp;&nbsp;<span data-toggle='tooltip' data-placement='top' title='To change the sort order, click on the column header you wish to sort by.' id='sortMode'>highest avg EXP</span>");
+                    $('#sortMode').tooltip();
                 }
             } else {
                 if (completeSolutions.length==1) {
 //                    $('#num_results').html("For "+u_exp+" EXP and "+u_stam+" Stamina, run:");
                 } else {
-                    $('#num_results').html("For "+u_exp+" EXP and "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> options.&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>highest avg EXP</span>");
+                    $('#num_results').html("For "+u_exp+" EXP and "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> options.&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        "Sorted by&nbsp;&nbsp;<span data-toggle='tooltip' data-placement='top' title='To change the sort order, click on the column header you wish to sort by.' id='sortMode'>highest avg EXP</span>");
+                    $('#sortMode').tooltip();
                 }
             }
         }
