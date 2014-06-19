@@ -382,19 +382,19 @@ custom_sort = function (mode) {
 sortBy = function(elem, idx) {
     if (idx==0) {
         custom_sort(idx);
-        $('#sortMode').text("Easiest Dungeon");
+        $('#sortMode').text("easiest Dungeon");
     }
     if (idx==4) {
-        $('#sortMode').text("Extra Stamina");
+        $('#sortMode').text("extra Stamina");
         custom_sort(idx);
     } else if (idx==1) {
-        $('#sortMode').text("Most avg EXP");
+        $('#sortMode').text("highest avg EXP");
         custom_sort(idx);
     } else if (idx ==2) {
-        $('#sortMode').text("Most EXP");
+        $('#sortMode').text("highest EXP");
         custom_sort(idx);
     } else if (idx ==3) {
-        $('#sortMode').text("Stamina cost");
+        $('#sortMode').text("lowest Stamina cost");
         custom_sort(idx);
     }
     $('.activeSort').removeClass('activeSort');
@@ -589,8 +589,20 @@ compute = function() {
         completeSolutions = completeSolutions.concat(singleDungeonSolutions);
 
         $('#ranked-container').show();
-        if (completeSolutions.length>1) {
-            $('#num_results').html("Found&nbsp;&nbsp;<span style='color:white;'>"+completeSolutions.length+"</span>&nbsp;&nbsp;options&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>Most avg EXP</span>");
+        if (completeSolutions.length>0) {
+            if (u_stam>0 && u_exp==0) {
+                if (completeSolutions.length==1) {
+//                    $('#num_results').html("With "+u_stam+" Stamina, run:");
+                } else {
+                    $('#num_results').html("With "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> dungeon options.&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>highest avg EXP</span>");
+                }
+            } else {
+                if (completeSolutions.length==1) {
+//                    $('#num_results').html("For "+u_exp+" EXP and "+u_stam+" Stamina, run:");
+                } else {
+                    $('#num_results').html("For "+u_exp+" EXP and "+u_stam+" Stamina, there are <span style='color:white;'>"+completeSolutions.length+"</span> options.&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>highest avg EXP</span>");
+                }
+            }
         }
         printResults(completeSolutions, "#r_rows", u_stam);
     }
@@ -617,11 +629,19 @@ compute = function() {
 
         var additional_mins = consolation_time.diff(moment(), "minutes");
         if (additional_mins <= 60) {
-            $('#consolation_msg').html("In <b>"+additional_mins+" minutes</b>, you'll have <b>"+consolation_stam+"</b> stamina for:");
+            if (u_stam==0) {
+                $('#consolation_msg').html("For <b>"+u_exp+"</b> EXP, you'll need <b>"+consolation_stam+"</b> Stamina for:");
+            } else {
+                $('#consolation_msg').html("In <b>"+additional_mins+" minutes</b>, you'll have <b>"+consolation_stam+"</b> Stamina for:");
+            }
         } else {
-            // to show the time, subtract 1 minute so it show up cleanly, e.g. "At 3:50, you'll have... " instead of "3:51"
-            consolation_time.subtract("minutes", 1);
-            $('#consolation_msg').html("At <b>"+(consolation_time.format("h:mm a"))+"</b>, you'll have "+consolation_stam+" stamina to run:");
+            if (u_stam==0) {
+                $('#consolation_msg').html("For <b>"+u_exp+"</b> EXP, you'll need <b>"+consolation_stam+"</b> Stamina for:");
+            }else {
+                // to show the time, subtract 1 minute so it show up cleanly, e.g. "At 3:50, you'll have... " instead of "3:51"
+                consolation_time.subtract("minutes", 1);
+                $('#consolation_msg').html("At <b>"+(consolation_time.format("h:mm a"))+"</b>, you'll have "+consolation_stam+" Stamina for:");
+            }
         }
 
         var completeConsolationSolutions = [];
@@ -891,7 +911,7 @@ $(document).ready(function() {
             }
             completeConsolationSolutions = completeConsolationSolutions.concat(consolation[2]);
             $('#td'+expB).text(consolation_stam);
-            $('#options'+expB).html(" <a href='#' onclick='pre_compute("+expB+","+consolation_stam+"); return false;'>full details &gt;</a>");
+            $('#options'+expB).html(" <a href='#' onclick='pre_compute("+expB+",0); return false;'>full details &gt;</a>");
         }
         $('#quick_look_time').text("calculated "+moment().format("h:mm a"));
     }
