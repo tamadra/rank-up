@@ -132,10 +132,9 @@ body {
 .no-padding {
     padding: 0;
 }
-.margin-bottom-70 {
-    margin-bottom: 70px;
+.margin-bottom-50 {
+    margin-bottom: 50px;
 }
-
 .prompt-input.active {
     border-color: white;
 }
@@ -213,6 +212,14 @@ h4 {
 }
 #dismiss:hover {
     background-color: white; color: #7BAEB9;
+}
+#dismiss2 {
+    width: 100px; text-transform: none;
+    margin: 15px auto 0; display: block;
+    background-color: #e2b68d; color:#fff;
+}
+#dismiss2:hover {
+    background-color: white; color: #e2b68d;
 }
 .option .accordion-inner {
     padding: 0;
@@ -589,7 +596,80 @@ ul {
         font-size: 30px;
     }
 }
-
+table#quicklook th {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 10px 7px;
+}
+table#quicklook tr td {
+    text-align: center;
+    padding: 2px 10px;
+    font-weight: 300;
+}
+table#quicklook tr td:nth-of-type(1) {
+    font-weight: 600;
+    color: #DE5E60;
+}
+table#quicklook tr td:nth-of-type(2) {
+    font-weight: 600;
+    color: white;
+}
+table#quicklook tr td:nth-of-type(3) {
+    padding: 2px 15px 2px 0;
+    text-align: right;
+}
+table#quicklook tr td:nth-of-type(3) a{
+    color: #ccc;
+}
+table#quicklook tr td:nth-of-type(3) a:hover{
+    color: #DE5E60;
+}
+table#quicklook tr.even {
+    background-color: black;
+}
+table#quicklook tr.odd {
+    background-color: #26292E;
+}
+#quick_look_time{
+    font-size: 16px; float: right; margin: 5px 15px 5px 0; color: #ccc;
+}
+#num_results {
+    width: 100%;
+    margin: 15px 0 0;
+    padding-left: 15px;
+    float: left;
+}
+.nav-tabs {
+    border-color: rgba(127, 130, 137, 0.5);
+}
+#tab1 {
+    margin-top: 10px;
+}
+#tab3 {
+    margin-top: 20px;
+}
+.nav-tabs>li>a, .nav-tabs>li>a:hover,.nav-tabs>li>a:focus,
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, #settings_header {
+    background-color: transparent;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+    font-size: 24px;
+    padding: 10px 0;
+    border: none;
+}
+.nav-tabs>li>a {
+    color: #7F8289;
+}
+.multipletabs .nav-tabs>li.active, .multipletabs .nav-tabs>li.active:hover {
+    border-bottom: 3px solid white;
+}
+h4 {
+    font-size: 18px
+}
 </style>
 
 <!--[if !IE]>
@@ -638,13 +718,13 @@ ul {
             <span class="font-fix">&#xe05f;</span> What is this?
         </h4>
         <div style="margin-left: 25px;  font-size: 14px;">
-            Rank Up! is a calculator that suggests the best dungeon(s) to run, based on the stamina you have.
-            Plug in your Stamina and/or EXP needed to give it a whirl.
+            Rank Up! is a calculator that finds the best dungeons to run, based on the EXP you need and/or the Stamina you have.
+            Plug in some numbers to give it a whirl.
             <br>
-            Features:
+            Results will magically:
             <ul style="margin-bottom: 0;">
-                <li style="font-size: 14px;"> Takes into account Daily Bonus events (such as 1/2 stamina).</li>
-                <li style="font-size: 14px;"> Customizable settings to only suggest dungeons you have access to.</li>
+                <li style="font-size: 14px;"> Take into account Daily Bonus events (such as 1/2 stamina).</li>
+                <li style="font-size: 14px;"> Only suggest dungeons you have access to (customizable in Settings).</li>
             </ul>
         </div>
 
@@ -652,184 +732,251 @@ ul {
     </div>
 </div>
 
-<div class="container width640" style="margin-top: 50px;">
+<div class="container width640" style="margin-top: 40px;">
 
     <div class="row prompt-row">
-        <!--<div class="col-xs-12 col-sm-6" id="exp_div">-->
-        <div id="exp_div">
-            <div class="prompt-input active" onclick="$('#u_exp').focus();">
-                You need: <input id="u_exp" placeholder="   ?" pattern="[0-9]*"> EXP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-
-        <!--<div  class="col-xs-12 col-sm-6" id="stam_div">-->
-        <div id="stam_div">
-            <div class="prompt-input" onclick="$('#u_stam').focus();">
-                You have: <input id="u_stam" placeholder="   ?" pattern="[0-9]*"> Stamina
+        <div class="tabbable">
+            <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                <li class="active"><a href="#tab0" data-toggle="tab"><span style="color:black;" class="font-fix">&#xe079;</span> Magic Search</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab0">
+                    <div id="exp_div">
+                        <div class="prompt-input active" onclick="$('#u_exp').focus();">
+                            You need: <input id="u_exp" placeholder="   ?" pattern="[0-9]*"> EXP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <!--<div  class="col-xs-12 col-sm-6" id="stam_div">-->
+                    <div id="stam_div">
+                        <div class="prompt-input" onclick="$('#u_stam').focus();">
+                            You have: <input id="u_stam" placeholder="   ?" pattern="[0-9]*"> Stamina
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row margin-bottom-70" >
+    <div class="row margin-bottom-50" >
         <div class="col-md-12">
             <input type="button" id="find-button" class="submit" onclick="compute(); return false;" style="border-radius: 3px;" value="Find Dungeon">
         </div>
     </div>
 
 
-    <div class="row" style="display: none;" id="results_header" >
-        <div class="col-md-12">
-            <h3 class="spec"><span style="color:black;" class="font-fix">&#xe079;</span> Results
-                <span id="num_results" style="color:#7F8289; font-size: 16px; margin-left:15px;"></span></h3>
-        </div>
-    </div>
-
-    <div class="row" style="display: none; margin-bottom: 10px;" id="success">
-        <div class="col-md-12">
-            <div class="alert alert-block alert-success fade in" style="margin-bottom: 0;">
-                <span style="margin-right: 10px;" class="font-fix">&#xe082;</span><span id="custom_msg"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="row" style="display: none;" id="ranked-container">
-        <div class="col-md-12">
-            <div class="accordion option">
-                <div class="accordion-group">
-                    <div class="accordion-body in collapse" style="height: auto;">
-                        <div class="accordion-inner">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th onclick="sortBy(this, 0);" style="cursor: pointer;">Dungeon(s)</th>
-                                    <th class="activeSort" onclick="sortBy(this, 1);" style="cursor: pointer; padding-left: 0; padding-right: 15px; text-align: right;" >avg&nbsp;<br>EXP</th>
-                                    <th onclick="sortBy(this, 2);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
-                                    <th onclick="sortBy(this, 3);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
-                                    <th onclick="sortBy(this, 4);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center; padding-right: 8px;">extra<br>Stam</th>
-                                </tr>
-                                </thead>
-                                <tbody id="r_rows">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row" style="display: none; margin-bottom: 5px;" id="bummer">
-        <div class="col-md-12">
-            <div class="alert alert-block alert-warning" style="margin-bottom: 0;">
-                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Bummer.</h4>
-                The most you can currently get is <b><span id="most_exp"></span></b> EXP
-            </div>
-        </div>
-    </div>
-
-    <div class="row" style="display: none; margin-bottom: 15px;" id="most_exp-container">
-        <div class="col-md-12">
-            <div id="most_exp_header" class="alert alert-block alert-info" style="margin-bottom: 0; padding: 7px 15px 5px;">
-                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Most EXP</h4>
-                <div style="display: inline-block"></div>
-            </div>
-            <div class="accordion option">
-                <div class="accordion-group">
-                    <div class="accordion-body in collapse" style="height: auto;">
-                        <div class="accordion-inner">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Dungeon(s)</th>
-                                    <th style="padding-left: 0; padding-right: 15px; text-align: right;">avg&nbsp;<br>EXP</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
-                                </tr>
-                                </thead>
-                                <tbody id="m_rows">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row" style="display: none; margin-top: 5px; margin-bottom: 5px;" id="consolation_alert">
-        <div class="col-md-12">
-            <div class="alert alert-block alert-info" style="margin-bottom: 0;">
-                <h4 id="but_wait" style="display: inline-block; margin-right: 6px;" class="alert-heading">But wait!</h4>
-                <div style="display: inline-block" id="consolation_msg"></div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row" style="display: none;" id="consolation">
-        <div class="col-md-12">
-            <div class="accordion option">
-                <div class="accordion-group">
-                    <div class="accordion-body in collapse" style="height: auto;">
-                        <div class="accordion-inner">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Dungeon(s)</th>
-                                    <th style="padding-left: 0; padding-right: 15px; text-align: right;">avg&nbsp;<br>EXP</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
-                                    <th style="padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
-                                </tr>
-                                </thead>
-                                <tbody id="c_rows">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container width640 margin-bottom-70" style="margin-top: 70px;" id="settings">
-
-    <div style="display: none; border-radius: 1px; padding: 15px 30px 15px 20px; margin: 0 auto 10px;" id="intro2"
-         class="width640 alert alert-block in">
-        <a onclick="return false;" class="close" id="setting_intro_close" style="width: auto; top:-2px; right:-12px;" data-dismiss="alert">&times;</a>
-        <div style="margin-left: 25px;  font-size: 17px;">
-            Tweak your settings below, including dungeons you don't want to run.
-            <br>Your settings will be automatically remembered in the future.
-        </div>
-    </div>
-
-
+<div class="row">
     <div class="col-md-12">
-        <h3 class="spec"><span style="color:black;" class="font-fix">&#xe0ba;</span> Settings</h3>
 
-        <h4 style="">Calculate dungeon EXP using:
-            <div style="float:right; color:#7F8289; font-size: smaller;">
-                <span id="avg_exp" class="calc_active">average EXP</span>
-                <label class="toggle"><input id="exp_checkbox" type="checkbox" name="checkbox-toggle">
-                    <i><span id="knob"></span></i></label>
-                <span id="lowest_exp">minimum EXP</span>
+        <div class="tabbable multipletabs" id="tabbys">
+            <ul class="nav nav-tabs">
+                <li id="results_header" style="display: none; padding-left:20px; margin-right: 40px;"><a href="#tab2" data-toggle="tab">Search Results</a></li>
+                <li id="quick_look_header" class="active" style="padding-right: 20px;"><a href="#tab1" data-toggle="tab"><span style="color:black;" class="font-fix">&#xe0c6;</span> Quick Look-up</a></li>
+                <li style="float: right; padding-right: 20px;"><a href="#tab3" data-toggle="tab"><span style="color:black;" class="font-fix">&#xe0ba;</span> Settings</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table id="quicklook" style="width: 100%">
+                        <tr>
+                            <th> To get ___ EXP </th><th> You'll need ___ Stamina </th><th><span id="quick_look_time"></span></th>
+                        </tr>
+                        <tr class="even">
+                            <td> 1,000 </td> <td id="td1000"> - </td><td id="options1000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 2,000 </td><td id="td2000"> - </td><td id="options2000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 3,000 </td><td id="td3000"> - </td><td id="options3000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 4,000 </td><td id="td4000"> - </td><td id="options4000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 5,000 </td><td id="td5000"> - </td><td id="options5000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 6,000 </td><td id="td6000"> - </td><td id="options6000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 7,000 </td><td id="td7000"> - </td><td id="options7000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 8,000 </td><td id="td8000"> - </td><td id="options8000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 9,000 </td><td id="td9000"> - </td><td id="options9000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 10,000 </td><td id="td10000"> - </td><td id="options10000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 11,000 </td><td id="td11000"> - </td><td id="options11000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 12,000 </td><td id="td12000"> - </td><td id="options12000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 13,000 </td><td id="td13000"> - </td><td id="options13000"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td> 14,000 </td><td id="td14000"> - </td><td id="options14000"></td>
+                        </tr>
+                        <tr class="even">
+                            <td> 15,000 </td><td id="td15000"> - </td><td id="options15000"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <span id="num_results" style="color:#7F8289; font-size: 16px;"></span>
+
+                    <div class="row" style="display: none; margin-bottom: 10px;" id="success">
+                        <div class="col-md-12">
+                            <div class="alert alert-block alert-success fade in" style="margin-bottom: 0;">
+                                <span style="margin-right: 10px;" class="font-fix">&#xe082;</span><span id="custom_msg"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="display: none;" id="ranked-container">
+                        <div class="col-md-12">
+                            <div class="accordion option">
+                                <div class="accordion-group">
+                                    <div class="accordion-body in collapse" style="height: auto;">
+                                        <div class="accordion-inner">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th onclick="sortBy(this, 0);" style="cursor: pointer; padding-left: 15px;">Dungeon(s)</th>
+                                                    <th class="activeSort" id="defaultSortColumn" onclick="sortBy(this, 1);" style="cursor: pointer; padding-left: 0; padding-right: 15px; text-align: right;" >avg&nbsp;<br>EXP</th>
+                                                    <th onclick="sortBy(this, 2);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
+                                                    <th onclick="sortBy(this, 3);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
+                                                    <th onclick="sortBy(this, 4);" style="cursor: pointer; padding-left: 0; padding-right: 10px; text-align: center; padding-right: 8px;">extra<br>Stam</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="r_rows">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="display: none; margin-bottom: 5px;" id="bummer">
+                        <div class="col-md-12">
+                            <div class="alert alert-block alert-warning" style="margin-bottom: 0;">
+                                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Bummer.</h4>
+                                The most you can currently get is <b><span id="most_exp"></span></b> EXP
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="display: none; margin-bottom: 15px;" id="most_exp-container">
+                        <div class="col-md-12">
+                            <div id="most_exp_header" class="alert alert-block alert-info" style="margin-bottom: 0; padding: 7px 15px 5px;">
+                                <h4 style="display: inline-block; margin-right: 6px;" class="alert-heading">Most EXP</h4>
+                                <div style="display: inline-block"></div>
+                            </div>
+                            <div class="accordion option">
+                                <div class="accordion-group">
+                                    <div class="accordion-body in collapse" style="height: auto;">
+                                        <div class="accordion-inner">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Dungeon(s)</th>
+                                                    <th style="padding-left: 0; padding-right: 15px; text-align: right;">avg&nbsp;<br>EXP</th>
+                                                    <th style="padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
+                                                    <th style="padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="m_rows">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="display: none; margin-top: 5px; margin-bottom: 5px;" id="consolation_alert">
+                        <div class="col-md-12">
+                            <div class="alert alert-block alert-info" style="margin-bottom: 0;">
+                                <h4 id="but_wait" style="display: inline-block; margin-right: 6px;" class="alert-heading">But wait!</h4>
+                                <div style="display: inline-block" id="consolation_msg"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="display: none;" id="consolation">
+                        <div class="col-md-12">
+                            <div class="accordion option">
+                                <div class="accordion-group">
+                                    <div class="accordion-body in collapse" style="height: auto;">
+                                        <div class="accordion-inner">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Dungeon(s)</th>
+                                                    <th style="padding-left: 0; padding-right: 15px; text-align: right;">avg&nbsp;<br>EXP</th>
+                                                    <th style="padding-left: 0; padding-right: 10px; text-align: right;">min&nbsp;<br>EXP</th>
+                                                    <th style="padding-left: 0; padding-right: 10px; text-align: center;">Stam</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="c_rows">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <div style="display: none; border-radius: 1px; padding: 15px 30px 15px 20px; margin: 0 auto 10px;" id="intro2"
+                         class="width640 alert alert-block in">
+                        <a onclick="return false;" class="close" id="setting_intro_close" style="width: auto; top:-2px; right:-12px;" data-dismiss="alert">&times;</a>
+                        <div style="margin-left: 25px;  font-size: 17px;">
+                            You can tweak search settings below, including which dungeons you don't want to run.
+                            <br>Once set, settings will be automatically remembered in future visits.
+                        </div>
+
+                        <a data-dismiss="alert" id="dismiss2" class="button button-small">Dismiss</a>
+                    </div>
+
+                    <h4 style="">Calculate dungeon EXP using:
+                        <div style="float:right; color:#7F8289; font-size: smaller;">
+                            <span id="avg_exp" class="calc_active">average EXP</span>
+                            <label class="toggle"><input id="exp_checkbox" type="checkbox" name="checkbox-toggle">
+                                <i><span id="knob"></span></i></label>
+                            <span id="lowest_exp">minimum EXP</span>
+                        </div>
+                    </h4>
+
+                    <h4 style="">
+                        Your Timezone:
+                        <div id="timezone" onclick="alert('Changing Timezone not yet supported');" style="float:right; color:#7F8289; font-size: smaller;">
+                        </div></h4>
+
+                    <h4 style="">Available dungeons: <span style="float:right; color:#7F8289; font-size: smaller;">uncheck dungeons you can't or don't want to play</span></h4>
+
+
+                    <!-- Start Toggle -->
+                    <div class="accordion" id="toggleArea">
+                    </div>
+                    <!-- End Toggle -->
+                </div>
             </div>
-        </h4>
 
-        <h4 style="">
-            Your Timezone:
-            <div id="timezone" onclick="alert('Changing Timezone not yet supported');" style="float:right; color:#7F8289; font-size: smaller;">
-            </div></h4>
-
-        <h4 style="">Available dungeons: <span style="float:right; color:#7F8289; font-size: smaller;">uncheck dungeons you can't or don't want to play</span></h4>
-
-
-        <!-- Start Toggle -->
-        <div class="accordion" id="toggleArea">
         </div>
-        <!-- End Toggle -->
     </div>
 </div>
+
+</div>
+
 <div class="clear"></div>
 </div>
 
@@ -842,7 +989,7 @@ ul {
 
 <script src="js/jquery.min.js"></script>
 <script src="js/vendors.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script_2.js"></script>
 <!--[if lt IE 9]>
 <script src="js/respond.min.js"></script>
 <![endif]-->

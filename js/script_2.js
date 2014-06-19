@@ -382,16 +382,16 @@ custom_sort = function (mode) {
 sortBy = function(elem, idx) {
     if (idx==0) {
         custom_sort(idx);
-        $('#sortMode').text("easiest Dungeon");
+        $('#sortMode').text("Easiest Dungeon");
     }
     if (idx==4) {
-        $('#sortMode').text("extra Stamina");
+        $('#sortMode').text("Extra Stamina");
         custom_sort(idx);
     } else if (idx==1) {
-        $('#sortMode').text("most avg EXP");
+        $('#sortMode').text("Most avg EXP");
         custom_sort(idx);
     } else if (idx ==2) {
-        $('#sortMode').text("most EXP");
+        $('#sortMode').text("Most EXP");
         custom_sort(idx);
     } else if (idx ==3) {
         $('#sortMode').text("Stamina cost");
@@ -540,6 +540,10 @@ compute = function() {
     $('#u_exp').blur();
     $('#u_stam').blur();
     $('#results_header').show();
+    $('#tabbys a[href="#tab2"]').tab('show');
+
+    $('.activeSort').removeClass('activeSort');
+    $('#defaultSortColumn').addClass('activeSort');
 
     u_stam = parseInt(u_stam);
     u_exp = parseInt(u_exp);
@@ -586,7 +590,7 @@ compute = function() {
 
         $('#ranked-container').show();
         if (completeSolutions.length>1) {
-            $('#num_results').html(completeSolutions.length+" options&nbsp;&nbsp;&nbsp;&nbsp;sorted by <span id='sortMode'>most avg EXP</span>");
+            $('#num_results').html("Found&nbsp;&nbsp;<span style='color:white;'>"+completeSolutions.length+"</span>&nbsp;&nbsp;options&nbsp;&nbsp;&nbsp;&nbsp;Sorted by&nbsp;&nbsp;<span id='sortMode'>Most avg EXP</span>");
         }
         printResults(completeSolutions, "#r_rows", u_stam);
     }
@@ -699,7 +703,7 @@ $(document).ready(function() {
         $('#u_exp').focus();
     });
 
-    $('#setting_intro_close').click(function(e) {
+    $('#setting_intro_close, #dismiss2').click(function(e) {
         savePref("showSettingIntro", false, 180);
     });
 
@@ -853,6 +857,15 @@ $(document).ready(function() {
     var paramExp = getParameterByName("exp");
     var doCompute = false;
 
+    pre_compute = function(e,s) {
+        $('#u_stam').val(s);
+        $('#u_exp').val(e);
+        compute();
+        setTimeout(function(){
+            $('#quick_look_header').removeClass('active');
+            $('#results_header').addClass("active");},
+        1000);
+    }
     if (paramStamina!=='' && intRegex.test(paramStamina)) {
         $('#u_stam').val(paramStamina);
         doCompute=true;
@@ -865,6 +878,20 @@ $(document).ready(function() {
         compute();
         $('#u_exp').blur();
         $('#u_stam').blur();
+    } else {
+        var breakPoints = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000];
+        for (var b in breakPoints) {
+            var expB = breakPoints[b];
+            var consolation = find_consolation(0, expB);
+            var consolation_stam = consolation[0];
+            var completeConsolationSolutions = [];
+            if (solutions[consolation_stam].n >= 2) {
+                completeConsolationSolutions.push(solutions[consolation_stam]);
+            }
+            completeConsolationSolutions = completeConsolationSolutions.concat(consolation[2]);
+            $('#td'+expB).text(consolation_stam);
+            $('#options'+expB).html(" <a href='#' onclick='pre_compute("+expB+","+consolation_stam+"); return false;'>full details &gt;</a>");
+        }
+        $('#quick_look_time').text("calculated "+moment().format("h:mm a"));
     }
-
 });
