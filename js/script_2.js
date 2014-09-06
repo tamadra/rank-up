@@ -267,7 +267,6 @@ function delete_solutions() {
 solve_unbounded_knapsack = function (stamina, timestamp) {
     // cap at some stamina to prevent running too long?
     if (stamina >= 2000) { return null; }
-    // todo: if the last time this was run was over an hour ago, re-run
 
     if (""+stamina in solutions) {
         return;
@@ -442,15 +441,21 @@ printResults = function(solutions, divId, u_stam) {
                     +dungeon[1]+"</a></td>" +
                 "<td class='shrink' style='text-align: right; vertical-align: middle; padding-left: 0; padding-right: 20px;'>"+numberWithCommas(Math.round(solution.avg))+"</td>" +
                 "<td class='shrink' style='text-align: right; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+numberWithCommas(solution.min)+"</td>" +
-                "<td class='shrink' style='text-align: center; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+dungeon[2]+"</td>"+
+                "<td class='shrink' style='text-align: center; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+(is_bonus(dungeon,"stam") ? Math.ceil(dungeon[2]/2) : dungeon[2])+"</td>"+
                 lastColumn+
                 "</tr>");
         } else if (solution.n > 1) {
-            var h1 = "", h2 = "", h3 = "", h4 = "", dungeonStr = [], dungeonIds = [];
+            var h1 = "", h2 = "", h3 = "", h4 = "", dungeonStr = [], dungeonIds = [], real_stamina = 0;
             for (var di=solution.d.length-1; di>=0; di--) {
                 dungeonIds.push(solution.d[di][12]);
                 dungeonStr.push('<a class="linkify subDungeonName" target="_blank" href="http://www.puzzledragonx.com/en/mission.asp?m='+
                     solution.d[di][6]+'" >'+ solution.d[di][1] +'</a>');
+                if (is_bonus(solution.d[di], "stam")) {
+                    real_stamina += Math.ceil(solution.d[di][2] / 2);
+                } else {
+                    real_stamina += solution.d[di][2];
+                }
+                
                 h1 += ('<div class="minirow"><div class="dungeonName">'+solution.d[di][0] + '</div>' +
                     '<a class="linkify subDungeonName" target="_blank" href="http://www.puzzledragonx.com/en/mission.asp?m='+
                     solution.d[di][6]+'" >'+ solution.d[di][1] +'</a></div>');
@@ -460,7 +465,7 @@ printResults = function(solutions, divId, u_stam) {
             }
             var lastColumn = "";
             if (u_stam) {
-                lastColumn = "<td class='shrink' style='vertical-align: middle; text-align: center; padding-left: 0; padding-right: 10px;'>"+Math.max((u_stam-solution.totalStamina), 0)+"</td>";
+                lastColumn = "<td class='shrink' style='vertical-align: middle; text-align: center; padding-left: 0; padding-right: 10px;'>"+Math.max((u_stam - real_stamina), 0)+"</td>";
             }
             $(divId).append("<tr>" +
                 "<td data-id='["+dungeonIds.join()+"]' class='expand' style='padding-left:15px;'>" +
@@ -468,7 +473,7 @@ printResults = function(solutions, divId, u_stam) {
                     ""+dungeonStr.join("<span style='color:white; font-size: 13px;'> + </span>")+ "</td>"+
                 "<td class='shrink' style='vertical-align: middle; text-align: right; padding-left: 0; padding-right:20px; '>"+numberWithCommas(Math.round(solution.avg))+"</td>"+
                 "<td class='shrink' style='vertical-align: middle; text-align: right; padding-left: 0; padding-right: 10px;' class='nobreak'>"+numberWithCommas(Math.round(solution.min))+"</td>"+
-                "<td class='shrink' style='vertical-align: middle; text-align: center; padding-left: 0; padding-right: 10px; '>"+solution.totalStamina+"</td>"+
+                "<td class='shrink' style='vertical-align: middle; text-align: center; padding-left: 0; padding-right: 10px; '>"+real_stamina+"</td>"+
                 lastColumn+
 
 //                '<td style="padding: 0 0 0 10px;">'+h1+'</td>' +
@@ -550,7 +555,6 @@ compute = function() {
 
     solve_unbounded_knapsack(u_stam);
     var mostExp = avgExpMode ? solutions[u_stam].avg : solutions[u_stam].min;
-
     if (mostExp >= u_exp) {
         // check if the solution has TOO MUCH stamina
         var checkIfTooMuchExp = function(stam, exp) {
@@ -568,11 +572,10 @@ compute = function() {
             if (checkIfTooMuchExp(stamTry, u_exp)) { stamTry--; }
             else { break; }
         }
-
         var completeSolutions = [];
         // add all multi-dungeon solutions
         while (stamTry>=0){
-            if (stamTry != solutions[stamTry].totalStamina) {
+            if (stamTry>0 && (solutions[stamTry-1].totalStamina === solutions[stamTry].totalStamina)) {
                 // skip this one, since it's using a lower stamina
             }
             else if (solutions[stamTry].d.length >= 2) {
@@ -583,7 +586,6 @@ compute = function() {
             }
             stamTry--;
         }
-
         // add all single dungeon solutions
         var singleDungeonSolutions = find_all_matches_sorted(u_stam, u_exp);
         completeSolutions = completeSolutions.concat(singleDungeonSolutions);
@@ -915,7 +917,7 @@ $(document).ready(function() {
             }
             completeConsolationSolutions = completeConsolationSolutions.concat(consolation[2]);
             $('#td'+expB).text(consolation_stam);
-            $('#options'+expB).html(" <a href='#' onclick='pre_compute("+expB+",0); return false;'>full details &gt;</a>");
+            $('#options'+expB).html(" <a href='#' onclick='pre_compute("+expB+",0); return false;'>full details <span class='fa fa-angle-double-right'></span></a>");
         }
         $('#quick_look_time').text("calculated "+moment().format("h:mm a"));
     }
