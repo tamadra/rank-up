@@ -319,7 +319,7 @@ find_consolation = function(u_stam, u_exp) {
             return [tryStam, tryTime, sorted];
         }
         tryStam++;
-        tryTime.add('minutes', 10);
+        tryTime.add('minutes', 5);
     }
 }
 
@@ -631,7 +631,7 @@ compute = function() {
         var consolation_time = consolation[1];
 
         // round down to the nearest 10-minute mark, since stamina increases at 10 minute intervals
-        consolation_time.minutes(Math.floor(consolation_time.minutes()/10)*10 + 1);
+        consolation_time.minutes(Math.floor(consolation_time.minutes()/5)*5 + 1);
 
         var additional_mins = consolation_time.diff(moment(), "minutes");
         if (additional_mins <= 60) {
