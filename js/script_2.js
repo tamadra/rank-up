@@ -319,7 +319,7 @@ find_consolation = function(u_stam, u_exp) {
             return [tryStam, tryTime, sorted];
         }
         tryStam++;
-        tryTime.add('minutes', 5);
+        tryTime.add('minutes', 3);
     }
 }
 
