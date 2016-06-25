@@ -198,6 +198,7 @@ for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
 function numberWithCommas(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 var avgExpMode = true;
+var coopMode = false;
 var solutions = {}; solutions[0] = {d:[],avg:0,min:0,n:0,totalStamina:0};
 
 // Given a dungeon, and a bonus type, checks if bonus is active
@@ -241,7 +242,7 @@ function filterDungeons(timestamp) {
     var opt = {};
     for (i in d) {
         if (!d[i].unlocked) { continue; }
-        var stam = is_bonus(d[i], "stam", timestamp) ? Math.round(d[i][2]/2) : d[i][2];
+        var stam = (is_bonus(d[i], "stam", timestamp) || coopMode) ? Math.round(d[i][2]/2) : d[i][2];
         var low = d[i][3];
         var high = d[i][4];
         var avg = (low+high)/2;
@@ -405,7 +406,7 @@ find_all_matches_sorted = function(stam, exp, timestamp) {
     var all_matches = [];
     for (i in d) {
         var v = avgExpMode ? (d[i][3] + d[i][4])/2 : d[i][3];
-        var dstam = is_bonus(d[i], "stam", timestamp) ? Math.round(d[i][2]/2) : d[i][2];
+        var dstam = (is_bonus(d[i], "stam", timestamp) || coopMode) ? Math.round(d[i][2]/2) : d[i][2];
         if ((d[i].unlocked) && dstam <= stam && v >= exp) {
             all_matches.push( {d:[d[i]], n:1, min:d[i][3], avg:(d[i][3]+d[i][4])/2} );
         }
@@ -441,7 +442,7 @@ printResults = function(solutions, divId, u_stam) {
                     +dungeon[1]+"</a></td>" +
                 "<td class='shrink' style='text-align: right; vertical-align: middle; padding-left: 0; padding-right: 20px;'>"+numberWithCommas(Math.round(solution.avg))+"</td>" +
                 "<td class='shrink' style='text-align: right; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+numberWithCommas(solution.min)+"</td>" +
-                "<td class='shrink' style='text-align: center; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+(is_bonus(dungeon,"stam") ? Math.ceil(dungeon[2]/2) : dungeon[2])+"</td>"+
+                "<td class='shrink' style='text-align: center; vertical-align: middle; padding-left: 0; padding-right: 10px;'>"+((is_bonus(dungeon,"stam") || coopMode) ? Math.ceil(dungeon[2]/2) : dungeon[2])+"</td>"+
                 lastColumn+
                 "</tr>");
         } else if (solution.n > 1) {
@@ -450,7 +451,7 @@ printResults = function(solutions, divId, u_stam) {
                 dungeonIds.push(solution.d[di][12]);
                 dungeonStr.push('<a class="linkify subDungeonName" target="_blank" href="http://www.puzzledragonx.com/en/mission.asp?m='+
                     solution.d[di][6]+'" >'+ solution.d[di][1] +'</a>');
-                if (is_bonus(solution.d[di], "stam")) {
+                if (is_bonus(solution.d[di], "stam") || coopMode) {
                     real_stamina += Math.ceil(solution.d[di][2] / 2);
                 } else {
                     real_stamina += solution.d[di][2];
@@ -860,27 +861,27 @@ $(document).ready(function() {
         delete_solutions();
     });
 
-    // $('#coop_no').click(function(event) {
-    // $('#coop_checkbox').prop("checked", true).trigger("change");
-    // });
-    // $('#coop_yes').click(function(event) {
-    //     $('#coop_checkbox').prop("checked", false).trigger("change");
-    // });
-    // $('#coop_checkbox').change(function(event){
-    //     if($(this).is(':checked')){
-    //         $(this).addClass("checked");
-    //         $('#coop_no').addClass("calc_active");
-    //         $('#coop_yes').removeClass('calc_active');
-    //         avgExpMode = true;
-    //     } else {
-    //         $(this).removeClass("checked");
-    //         $('#coop_yes').addClass("calc_active");
-    //         $('#coop_no').removeClass('calc_active');
-    //         avgExpMode = false;
-    //     }
-    //     savePref("coopMode", avgExpMode, 180);
-    //     delete_solutions();
-    // });
+    $('#coop_no').click(function(event) {
+    $('#coop_checkbox').prop("checked", true).trigger("change");
+    });
+    $('#coop_yes').click(function(event) {
+        $('#coop_checkbox').prop("checked", false).trigger("change");
+    });
+    $('#coop_checkbox').change(function(event){
+        if($(this).is(':checked')){
+            $(this).addClass("checked");
+            $('#coop_no').addClass("calc_active");
+            $('#coop_yes').removeClass('calc_active');
+            coopMode = false;
+        } else {
+            $(this).removeClass("checked");
+            $('#coop_yes').addClass("calc_active");
+            $('#coop_no').removeClass('calc_active');
+            coopMode = true;
+        }
+        savePref("coopMode", coopMode, 180);
+        delete_solutions();
+    });
 
     var expMode = readPref("expMode");
     if (expMode !== null) {
@@ -889,6 +890,14 @@ $(document).ready(function() {
         savePref("expMode", avgExpMode, 180);
     }
     $('#exp_checkbox').prop("checked", avgExpMode).trigger("change");
+
+    var cMode = readPref("coopMode");
+    if (cMode !== null) {
+        coopMode = cMode;
+    } else {
+        savePref("coopMode", coopMode, 180);
+    }
+    $('#coop_checkbox').prop("checked", coopMode).trigger("change");
 
     var lockedDungeons = readPref("locked");
     if (lockedDungeons !== null) {
