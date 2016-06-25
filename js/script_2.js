@@ -192,7 +192,74 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Starlight Sanctuary","Goddess of Harvest",14,6900,8250,542,203,"Tier 6","Tower","6","0","drop"],
     ["Starlight Sanctuary","Goddess of War",14,6400,7450,495,204,"Tier 6","Tower","6","0","drop"],
     ["Starlight Sanctuary","Queen of the Gods",14,8300,9500,636,205,"Tier 6","Tower","6","0","drop"],
-    ["Starlight Sanctuary","King of the Gods",17,13000,14800,818,206,"Tier 6","Tower","6","0","drop"]];
+    ["Starlight Sanctuary","King of the Gods",17,13000,14800,818,206,"Tier 6","Tower","6","0","drop"],
+    ["Alt. Castle of Satan in Abyss","Red Eyes and Evil Claws",30,14000,20000,566,1869,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Castle of Satan in Abyss","Bloody Scales Over Soft Skin 2",30,13000,19000,533,1870,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Castle of Satan in Abyss","Dark Flames Ghost",30,14000,19000,550,1871,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Castle of Satan in Abyss","Dragon Puppets 2",30,13000,19000,533,1872,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Castle of Satan in Abyss","Return of the Dark King 2",30,18000,28000,766,1873,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Green Water","Rosettes and Water Blood",30,15000,18500,558,1874,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Green Water","Flower Fairies 2",30,15000,18500,558,1875,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Green Water","Wind Water Ghost",30,15000,18500,558,1876,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Green Water","Room of Twin Fish 2",30,15000,19000,566,1877,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Green Water","Fortdragon of the Shrine 2",30,22000,26000,800,1878,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Liquid Flame","Water Blood and Red Eyes",30,16000,19000,583,1879,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Liquid Flame","Singing Mermaid 2",30,15000,18000,550,1880,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Liquid Flame","Water Flames Ghost",30,15000,18500,558,1881,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Liquid Flame","Twin Fire Toydragons 2",30,16000,18000,566,1882,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Liquid Flame","Waterdragon of the Shrine 2",30,21000,27000,800,1883,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Blazing Woods","Rosettes and Red Eyes",30,16000,19000,583,1884,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Blazing Woods","Fire Serpent 2",30,14000,18000,533,1885,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Blazing Woods","Wind Flames Ghost",30,16000,19500,591,1886,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Blazing Woods","Toynasaurs in the Way 2",30,14000,17000,516,1887,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Shrine of Blazing Woods","Fire Toydragon of the Shrine 2",30,22000,28000,833,1888,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Temple of Trailokya","Gleaming Horns and Evil Claws",30,17000,19000,600,1889,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Temple of Trailokya","Waltz of Maidens",30,16000,19000,583,1890,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Temple of Trailokya","Radiant Darkness Ghost",30,18000,20000,633,1891,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Temple of Trailokya","Door to Trailokya",30,16000,19000,583,1892,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Temple of Trailokya","Dragon of Trailokya",30,24000,29500,891,1893,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hypno Forest","Flower Dragon of the Forest 2",30,13000,15000,466,1894,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hypno Forest","Green Hero",30,11000,13500,408,1895,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hypno Forest","Ancient Dragon Warrior 2",30,12000,16000,466,1896,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hypno Forest","Green Giant 2",30,13000,16000,483,1897,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hypno Forest","Noble Wolf King Hero",30,18000,23000,683,1898,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Creek of Neleus","Sea Dragon of the Creek 2",30,12000,15000,450,1899,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Creek of Neleus","Blue Hero",30,12000,14500,441,1900,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Creek of Neleus","Hunter at the Seaside 2",30,12000,15000,450,1901,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Creek of Neleus","Guardian of the Creek 2",30,11000,15000,433,1902,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Creek of Neleus","Earth-Rending Emperor",30,18000,23000,683,1903,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hemera Volcanic Belt","Flame-Devouring Dragon 2",30,13000,14500,458,1904,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hemera Volcanic Belt","Red Strong Warrior",30,10000,13500,391,1905,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hemera Volcanic Belt","Knight Embraced by Phoenix 2",30,12000,15000,450,1906,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hemera Volcanic Belt","Fire! Fire!! Fire!!! 2",30,12000,15000,450,1907,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Hemera Volcanic Belt","Red Giant",30,18000,23000,683,1908,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Aither Desert","Hunter in the Desert 2",30,14000,16000,500,1909,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Aither Desert","Beyond the Desert 2",30,12000,14000,433,1910,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Aither Desert","Temple Under the Desert 2",30,12000,14500,441,1911,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Aither Desert","Guards of the Light 2",30,13000,15000,466,1912,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Aither Desert","Shielded Goddess",30,20000,24000,733,1913,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Talos's Abyss","Moon in the Abyss 2",30,14000,16000,500,1914,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Talos's Abyss","Glimpse of Death 2",30,11500,13000,408,1915,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Talos's Abyss","Fallen Dragon Knight 2",30,13000,16000,483,1916,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Talos's Abyss","Annihilator of the Void 2",30,13000,16000,483,1917,"Alt. Tier","Tower","6","0","drop"],
+    ["Alt. Talos's Abyss","Dark Liege",30,18000,23500,691,1918,"Alt. Tier","Tower","6","0","drop"],
+    ["Machine Hera Descended!","Mechanical War King-Annihilation",99,138867,138867,1403,1826,"God Tier","Tower","6","0",""],
+    ["Machine Zeus Descended!-No RCV","Mechanical Queen-Annihilation",99,114497,114497,1157,1973,"God Tier","Tower","6","0",""]
+    ];
+
+// 0 - dungeon name
+// 1 - subdungeon
+// 2 - stamina cost
+// 3 - low
+// 4 - high
+// 5 - avgerage exp/stam
+// 6 - pdx dungeon id
+// 7 - "Tier ?"
+// 8 - primary color
+// 9 - event time 1         all times in PST/PDT. 0 is Sunday, 6 is Saturday
+// 10 - event time 2        all times in PST/PDT. 0 is Sunday, 6 is Saturday
+// 11 - event type  ("coin", "drop", "stam")
+// 12 - array index
 
 for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
