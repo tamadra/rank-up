@@ -860,6 +860,28 @@ $(document).ready(function() {
         delete_solutions();
     });
 
+    // $('#coop_no').click(function(event) {
+    // $('#coop_checkbox').prop("checked", true).trigger("change");
+    // });
+    // $('#coop_yes').click(function(event) {
+    //     $('#coop_checkbox').prop("checked", false).trigger("change");
+    // });
+    // $('#coop_checkbox').change(function(event){
+    //     if($(this).is(':checked')){
+    //         $(this).addClass("checked");
+    //         $('#coop_no').addClass("calc_active");
+    //         $('#coop_yes').removeClass('calc_active');
+    //         avgExpMode = true;
+    //     } else {
+    //         $(this).removeClass("checked");
+    //         $('#coop_yes').addClass("calc_active");
+    //         $('#coop_no').removeClass('calc_active');
+    //         avgExpMode = false;
+    //     }
+    //     savePref("coopMode", avgExpMode, 180);
+    //     delete_solutions();
+    // });
+
     var expMode = readPref("expMode");
     if (expMode !== null) {
         avgExpMode = expMode;
