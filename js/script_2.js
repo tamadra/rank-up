@@ -243,23 +243,9 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Alt. Talos's Abyss","Fallen Dragon Knight 2",30,13000,16000,483,1916,"Alt. Tier","Tower","6","0","drop"],
     ["Alt. Talos's Abyss","Annihilator of the Void 2",30,13000,16000,483,1917,"Alt. Tier","Tower","6","0","drop"],
     ["Alt. Talos's Abyss","Dark Liege",30,18000,23500,691,1918,"Alt. Tier","Tower","6","0","drop"],
-    ["Machine Hera Descended!","Mechanical War King-Annihilation",99,138867,138867,1403,1826,"God Tier","Tower","6","0",""],
-    ["Machine Zeus Descended!-No RCV","Mechanical Queen-Annihilation",99,114497,114497,1157,1973,"God Tier","Tower","6","0",""]
+    ["Machine Hera Descended!","Mechanical Queen-Annihilation",99,138867,138867,1403,1826,"God Tier","Tower","6","0",""],
+    ["Machine Zeus Descended!-No RCV","Mechanical War King-Annihilation",99,114497,114497,1157,1973,"God Tier","Tower","6","0",""]
     ];
-
-// 0 - dungeon name
-// 1 - subdungeon
-// 2 - stamina cost
-// 3 - low
-// 4 - high
-// 5 - avgerage exp/stam
-// 6 - pdx dungeon id
-// 7 - "Tier ?"
-// 8 - primary color
-// 9 - event time 1         all times in PST/PDT. 0 is Sunday, 6 is Saturday
-// 10 - event time 2        all times in PST/PDT. 0 is Sunday, 6 is Saturday
-// 11 - event type  ("coin", "drop", "stam")
-// 12 - array index
 
 for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
@@ -732,6 +718,14 @@ compute = function() {
     $('.accordion-inner p:nth-child(odd)').addClass('odd');
 }
 
+    function checkAll(el) {
+        var checkboxes = $("input:checkbox." + $(el).attr('id'));
+        $(checkboxes).each(function() {
+            $(this).prop("checked", el.checked).trigger('change');
+            $(this).children('input:checkbox').prop('checked', el.checked)
+        })
+    }
+
 
 $(document).ready(function() {
     // polyfill for IE8. placeholder bug
@@ -752,6 +746,9 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+
+
+
     var dunName = "";
     var tierName = "";
     var htmlStr = "";
@@ -761,15 +758,16 @@ $(document).ready(function() {
                 document.getElementById('toggleArea').innerHTML += htmlStr + "</div></div></div>";
             }
             dunName = d[i][0];
-            var tier = d[i][7]; var tierStr = "";
+            var tier = d[i][7];
+            var tierStr = "";
 
             if (tierName !== tier && tier) {
-                tierStr = "<div class='tier'>"+tier+"</div>";
+                tierStr = "<div class='tier'><input type='checkbox' id='" + tier.replace(" ", "").replace(".","") + "' onchange='checkAll(this)' checked class='checkboxTier checked' /> "+tier+"</div>";
                 tierName = tier;
             }
             htmlStr = tierStr + '<div class="accordion-group"><div class="accordion-heading togglize">' +
                 '<a class="accordion-toggle dungeon tower unlocked" data-toggle="collapse" data-parent="#" href="#collapse'+i+'">' +
-                '<input type="checkbox" checked id="c'+i+'" class="checkbox1 checked" />' +
+                '<input type="checkbox" checked id="c'+i+'" class="checkbox1 checked ' + tierName.replace(" ", "").replace(".","") + '" />' +
                 '<label for="c'+i+'" class="c-label"></label>' +
                 '<p>'+d[i][0]+'</p>' +
                 '<span class="font-icon-plus tog"></span>' +
@@ -777,7 +775,7 @@ $(document).ready(function() {
                 '<div id="collapse'+i+'" class="accordion-body collapse"><div class="accordion-inner">';
         }
         htmlStr += ('<p class="sub-dungeon unlocked" >' +
-            '<input type="checkbox" data-arrayid="'+i+'" checked id="cc'+i+'" class="checkbox2 checked" />' +
+            '<input type="checkbox" data-arrayid="'+i+'" checked id="cc'+i+'" class="checkbox2 checked ' + tierName.replace(" ", "").replace(".","") + '" />' +
             '<label for="cc'+i+'" class="c-label"></label>'
             + d[i][1] +
             '<span class="s_stamina">'+ d[i][2]+'</span>' +
@@ -786,6 +784,7 @@ $(document).ready(function() {
             '</p>'
             );
     }
+
     document.getElementById('toggleArea').innerHTML += htmlStr+"</div></div></div>";
     $('.accordion-toggle').click(function(event){
         $(this).toggleClass("active");
