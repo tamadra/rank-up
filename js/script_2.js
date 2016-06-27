@@ -247,6 +247,12 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,],
     ["Machine Zeus Descended!-No RCV","Mechanical War King-Annihilation",99,114497,114497,1157,1973,"God Tier","Tower","6","0",""]
     ];
 
+var nowM = moment();
+nowM.tz("America/Los_Angeles");
+if (nowM.day() == 1) {
+    d.push(["Monday Dungeon","Iron Strength Plaza - Expert",25,19000,21000,800,1649,"Special Dungeon","Tower","6","0",""]);
+    d.push(["Monday Dungeon","Iron Strength Plaza - Legend",50,60000,63000,1230,1650,"Special Dungeon","Tower","6","0",""]);
+}
 for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
 function numberWithCommas(x) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
@@ -293,7 +299,7 @@ function is_bonus(dd, type, timestamp) {
 
 function is_coop(d) {
     if (coopMode) {
-        if(d[7] === "Alt. Tier" || d[7] === "God Tier")
+        if(d[7] === "Alt. Tier" || d[7] === "God Tier" || d[7] === "Special Dungeon")
             return true;
         return false;
     }
