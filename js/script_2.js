@@ -278,8 +278,8 @@ d = [["Departure Tower","Tower Entrance",3,48,90,23,1,,,,,,false],
 var nowM = moment();
 nowM.tz("America/Los_Angeles");
 if (nowM.day() == 1) {
-    d.push(["Monday Dungeon","Iron Strength Plaza - Expert",25,19000,21000,800,1649,"Special Dungeon","Tower","6","0",""]);
-    d.push(["Monday Dungeon","Iron Strength Plaza - Legend",50,60000,63000,1230,1650,"Special Dungeon","Tower","6","0",""]);
+    d.push(["Monday Dungeon","Iron Strength Plaza - Expert",25,19000,21000,800,1649,"Special Dungeon","Tower","6","0","",,true]);
+    d.push(["Monday Dungeon","Iron Strength Plaza - Legend",50,60000,63000,1230,1650,"Special Dungeon","Tower","6","0","",,true]);
 }
 for (i in d) { d[i].unlocked = true; d[i][12] = parseInt(i); }
 var intRegex = /^\d+$/;
